@@ -20,7 +20,7 @@ export function handler(event, context, callback) {
     "text": "New comment on " + process.env.URL,
 	  "attachments": [
       {
-        "fallback": "New comment on hawksworx.com",
+        "fallback": "New comment on the comment example site",
         "color": "#444",
         "author_name": body.data.email,
         "title": body.data.path,

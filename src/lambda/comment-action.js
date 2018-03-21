@@ -49,7 +49,7 @@ export function handler(event, context, callback) {
 
         // now we have the data, let's massage it and post it to the approved form
         var payload = {
-          'form-name' : "approved-blog-comments",
+          'form-name' : "approved-comments",
           'path': data.path,
           'received': new Date().toString(),
           'email': data.email,
