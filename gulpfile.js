@@ -42,10 +42,17 @@ gulp.task("scss", function () {
 gulp.task('check-init', function () {
   // console.log("envs", process.env.ROUTES_FORM_ID);
   if(process.env.ROUTES_FORM_ID && process.env.API_AUTH ) {
-    console.log("init OK!");
+    console.log("Required ENV VARS found.");
+    var initStatus = {"environment" : true};
   } else {
-    console.log("We need ENV VARS");
+    console.log("Required ENV VARS required.");
+    var initStatus = {"environment" : false};
   }
+  fs.writeFile(buildSrc + "/_data/init.json", initStatus, function(err) {
+    if(err) {
+      console.log(err);
+    }
+  });
 });
 
 
