@@ -1,10 +1,11 @@
-var gulp      = require("gulp");
-var sass      = require("gulp-sass");
-var serve     = require('gulp-serve');
-var shell     = require('gulp-shell');
-var request   = require("request");
-var gravatar  = require('gravatar');
-var clean     = require('gulp-clean');
+var gulp        = require("gulp");
+var sass        = require("gulp-sass");
+var serve       = require('gulp-serve');
+var shell       = require('gulp-shell');
+var request     = require("request");
+var fs          = require('fs');
+var gravatar    = require('gravatar');
+var clean       = require('gulp-clean');
 var runSequence = require('run-sequence');
 
 
