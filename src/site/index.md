@@ -19,5 +19,3 @@ This example uses a comments system which is litte more than a form handler and 
   {% include "setup-hint.njk" -%}
 {% endif %}
 
-
-{% include "stub.njk" -%}

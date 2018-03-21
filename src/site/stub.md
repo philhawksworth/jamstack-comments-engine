@@ -1,5 +1,4 @@
-
-<form name="approved-blog-comments" netlify>
+<form name="approved-comments" netlify>
   <input name="path">
   <input type="text" name="received">
   <input type="text" name="name" id="name">
