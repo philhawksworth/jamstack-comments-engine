@@ -1,1 +1,11 @@
-<h2>comments here</h2>
+<h2>Comments on this page</h2>
+<ul>
+{% set key = page.url %}
+{%- for comment in comments[key] -%}
+  <li class="comment">
+    <h3><img class="avatar" src="{{ comment.avatar }}">{{ comment.name }}</h3>
+    <time>{{ comment.date | dateDisplay }}</div>
+    <div>{{ comment.comment }}</div>
+  </li>
+{%- endfor -%}
+</ul>

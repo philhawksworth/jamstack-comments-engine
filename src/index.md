@@ -22,5 +22,3 @@ This example uses a comments system which is litte more than a form handler and 
 ## Latest comments
 
 <!-- pull most recent comment from comments data -->
-
-
