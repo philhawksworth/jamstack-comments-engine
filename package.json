@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^0.2.15",
+    "dotenv": "^5.0.1",
     "gravatar": "^1.6.0",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.4.0",
