@@ -6,7 +6,7 @@ module.exports = function(config) {
   // eleventy config settings
   return {
     dir: {
-      input: "src",
+      input: "src/site",
       output: "dist",
       includes: "_includes"
     },

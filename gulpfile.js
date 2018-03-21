@@ -55,7 +55,7 @@ gulp.task('check-init', function () {
   }
 
   // save the status of our environment somewhere that our SSG can access it
-  fs.writeFile(buildSrc + "/_data/init.json", JSON.stringify(initStatus), function(err) {
+  fs.writeFile(buildSrc + "/site/_data/init.json", JSON.stringify(initStatus), function(err) {
     if(err) {
       console.log(err);
     }
@@ -107,7 +107,7 @@ gulp.task("get:comments", function () {
       }
 
       // write our data to a file where our site generator can get it.
-      fs.writeFile(buildSrc + "/_data/comments.json", JSON.stringify(comments), function(err) {
+      fs.writeFile(buildSrc + "/site/_data/comments.json", JSON.stringify(comments), function(err) {
         if(err) {
           console.log(err);
         } else {
