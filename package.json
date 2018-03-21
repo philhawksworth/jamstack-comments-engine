@@ -1,0 +1,19 @@
+{
+  "name": "comments-engine-example",
+  "version": "1.0.0",
+  "author": "Phil Hawksworth",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn run build && yarn run watch",
+    "build": "eleventy --config=eleventy.js && gulp scss",
+    "watch": "gulp watch & gulp serve"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^0.2.15",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-serve": "^1.4.0",
+    "gulp-shell": "^0.6.5"
+  }
+}

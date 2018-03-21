@@ -1,0 +1,14 @@
+---
+layout: layouts/base.njk
+pageClass: events
+---
+
+{{ tags }}
+
+<main>
+  {{ content | safe }}
+</main>
+<div class="comments">
+ {% include "comment-form.njk" -%}
+ {% include "comments.njk" -%}
+</div>
