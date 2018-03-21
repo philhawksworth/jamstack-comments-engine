@@ -3,7 +3,7 @@ title: A snazzy blog
 layout: layouts/base.njk
 ---
 
-This example uses a comments system which is litte more than a form handler and Lambda function from Netlify. HAve a look around and then perhaps get a version of your own to tinker with.
+This example uses a comments system which is litte more than a form handler and Lambda function from Netlify. Have a look around and then perhaps get a version of your own to tinker with.
 
 
 ## Posts
@@ -14,6 +14,10 @@ This example uses a comments system which is litte more than a form handler and 
 {%- endfor -%}
 </ul>
 
+
+{% if init.environment == false %}
+  {% include "setup-hint.njk" -%}
+{% endif %}
 
 ## Latest comments
 

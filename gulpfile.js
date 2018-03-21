@@ -4,10 +4,20 @@ var serve     = require('gulp-serve');
 var shell     = require('gulp-shell');
 var request   = require("request");
 var gravatar  = require('gravatar');
+var clean     = require('gulp-clean');
+var runSequence = require('run-sequence');
+
 
 // what goes where?
 var buildSrc = "src";
 var buildDest = "dist";
+
+
+// cleanup the build output
+gulp.task('clean-build', function () {
+  return gulp.src(buildDest, {read: false})
+    .pipe(clean());
+});
 
 
 // local webserver for development
@@ -27,9 +37,20 @@ gulp.task("scss", function () {
 });
 
 
-// run the site generator
-gulp.task('generate', shell.task('eleventy --config=eleventy.js'));
 
+// Check if we need to help teh developer setup the environment variables
+gulp.task('check-init', function () {
+  // console.log("envs", process.env.ROUTES_FORM_ID);
+  if(process.env.ROUTES_FORM_ID && process.env.API_AUTH ) {
+    console.log("init OK!");
+  } else {
+    console.log("We need ENV VARS");
+  }
+});
+
+
+
+gulp.task('generate', shell.task('eleventy  --config=eleventy.js'));
 
 
 
@@ -91,11 +112,16 @@ gulp.task("get:comments", function () {
 
 
 // Watch src folder for changes
-gulp.task("watch", ["scss", "generate"], function () {
-  gulp.watch(buildSrc + "/scss/**/*", ["scss"])
-  gulp.watch(buildSrc + "/**/*", ["generate"])
+gulp.task("watch", ['build'], function () {
+  gulp.watch(buildSrc + "/**/*", ["build"])
 });
 
 
 
-
+gulp.task('build', function(callback) {
+  runSequence(
+    ['clean-build','check-init'],  // 'get-comments',
+    ['generate', 'scss'],
+    callback
+  );
+});
