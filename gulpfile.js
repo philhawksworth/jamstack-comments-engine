@@ -49,7 +49,7 @@ gulp.task('check-init', function () {
     console.log("Required ENV VARS required.");
     var initStatus = {"environment" : false};
   }
-  fs.writeFile(buildSrc + "/_data/init.json", initStatus, function(err) {
+  fs.writeFile(buildSrc + "/_data/init.json", JSON.stringify(initStatus), function(err) {
     if(err) {
       console.log(err);
     }

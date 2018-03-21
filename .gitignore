@@ -1,2 +1,3 @@
 node_modules
 dist
+src/_data/init.json
