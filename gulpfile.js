@@ -46,7 +46,7 @@ gulp.task("scss", function () {
 gulp.task('check-init', function () {
 
   // Look for the environment variables
-  if(process.env.FORM_ID && process.env.API_AUTH ) {
+  if(process.env.FORM_ID && process.env.API_AUTH & process.env.SLACK_WEBHOOK_URL ) {
     console.log("Required ENV VARS found.");
     var initStatus = {"environment" : true};
   } else {

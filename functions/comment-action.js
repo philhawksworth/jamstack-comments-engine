@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 173);
+/******/ 	return __webpack_require__(__webpack_require__.s = 172);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -31625,8 +31625,7 @@ module.exports.parse = parse
 
 
 /***/ }),
-/* 172 */,
-/* 173 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31642,56 +31641,80 @@ var request = __webpack_require__(76);
 __webpack_require__(171).config();
 
 /*
-  Our serverless function handler
+  delete this submission via the api
+*/
+function purgeComment(id) {
+  var url = 'https://api.netlify.com/api/v1/submissions/' + id + '?access_token=' + process.env.API_AUTH;
+  request.delete(url, function (err, response, body) {
+    if (err) {
+      return console.log(err);
+    } else {
+      return console.log("Comment deleted from queue.");
+    }
+  });
+}
+
+/*
+  Handle the lambda invocation
 */
 function handler(event, context, callback) {
 
-  // get the arguments from the notification
-  var body = JSON.parse(event.body);
+  // parse the payload
+  var body = event.body.split("payload=")[1];
+  var payload = JSON.parse(unescape(body));
+  var method = payload.actions[0].name;
+  var id = payload.actions[0].value;
 
-  // prepare call to the Slack API
-  var slackURL = process.env.SLACK_WEBHOOK_URL;
-  var slackPayload = {
-    "text": "New comment on " + process.env.URL,
-    "attachments": [{
-      "fallback": "New comment on hawksworx.com",
-      "color": "#444",
-      "author_name": body.data.email,
-      "title": body.data.path,
-      "title_link": process.env.URL + body.data.path,
-      "text": body.data.comment
-    }, {
-      "fallback": "Manage comments on " + process.env.URL,
-      "callback_id": "comment-action",
-      "actions": [{
-        "type": "button",
-        "text": "Approve comment",
-        "name": "approve",
-        "value": body.id
-      }, {
-        "type": "button",
-        "style": "danger",
-        "text": "Delete comment",
-        "name": "delete",
-        "value": body.id
-      }]
-    }]
-  };
-
-  // post the notification to Slack
-  request.post({ url: slackURL, json: slackPayload }, function (err, httpResponse, body) {
-    var msg;
-    if (err) {
-      msg = 'Post to Slack failed:' + err;
-    } else {
-      msg = 'Post to Slack successful!  Server responded with:' + body;
-    }
+  if (method == "delete") {
+    purgeComment(id);
     callback(null, {
       statusCode: 200,
-      body: msg
+      body: "Comment deleted"
     });
-    return console.log(msg);
-  });
+  } else if (method == "approve") {
+
+    // get the comment data from the queue
+    var url = 'https://api.netlify.com/api/v1/submissions/' + id + '?access_token=' + process.env.API_AUTH;
+
+    request(url, function (err, response, body) {
+      if (!err && response.statusCode === 200) {
+        var data = JSON.parse(body).data;
+
+        // now we have the data, let's massage it and post it to the approved form
+        var payload = {
+          'form-name': "approved-blog-comments",
+          'path': data.path,
+          'received': new Date().toString(),
+          'email': data.email,
+          'name': data.name,
+          'comment': data.comment
+        };
+        var approvedURL = process.env.URL;
+
+        console.log("Posting to", approvedURL);
+        console.log(payload);
+
+        // post the comment to the approved lost
+        request.post({ 'url': approvedURL, 'formData': payload }, function (err, httpResponse, body) {
+          var msg;
+          if (err) {
+            msg = 'Post to approved comments failed:' + err;
+            console.log(msg);
+          } else {
+            msg = 'Post to approved comments list successful.';
+            console.log(msg);
+            purgeComment(id);
+          }
+          var msg = "Comment registered. Site deploying to include it.";
+          callback(null, {
+            statusCode: 200,
+            body: msg
+          });
+          return console.log(msg);
+        });
+      }
+    });
+  }
 }
 
 /***/ })

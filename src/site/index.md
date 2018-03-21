@@ -19,6 +19,5 @@ This example uses a comments system which is litte more than a form handler and 
   {% include "setup-hint.njk" -%}
 {% endif %}
 
-## Latest comments
 
-<!-- pull most recent comment from comments data -->
+{% include "comments.njk" -%}
