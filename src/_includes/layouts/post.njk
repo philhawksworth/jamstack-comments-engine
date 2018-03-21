@@ -3,7 +3,7 @@ layout: layouts/base.njk
 pageClass: events
 ---
 
-{{ tags }}
+date: {{ date | dateDisplay }}
 
 <main>
   {{ content | safe }}

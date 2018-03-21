@@ -8,7 +8,10 @@
   </head>
   <body class="{{ pageClass }}">
     <header>
-      {% include "navigation.njk" -%}
+      <ul class="nav">
+        <li><a href="/">home</a></li>
+        <li><a href="/about">about</a></li>
+      </ul>
     </header >
     {{ content | safe }}
   </body>
