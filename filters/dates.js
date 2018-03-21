@@ -1,3 +1,6 @@
+/*
+  A date formatter filter for Nunjucks
+*/
 module.exports = function(date) {
   var month = [
     "January",

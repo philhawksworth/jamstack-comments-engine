@@ -29,6 +29,9 @@ gulp.task("scss", function () {
 gulp.task('generate', shell.task('eleventy --config=eleventy.js'));
 
 
+// TODO: get comments from Netlify submissions API into data files
+
+
 // Watch src folder for changes
 gulp.task("watch", ["scss", "generate"], function () {
   gulp.watch(buildSrc + "/scss/**/*", ["scss"])
