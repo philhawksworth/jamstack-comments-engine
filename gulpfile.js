@@ -107,7 +107,7 @@ gulp.task("get:comments", function () {
       }
 
       // write our data to a file where our site generator can get it.
-      fs.writeFile(buildSrc + "/site/_data/comments.json", JSON.stringify(comments), function(err) {
+      fs.writeFile(buildSrc + "/site/_data/comments.json", JSON.stringify(comments, null, 2), function(err) {
         if(err) {
           console.log(err);
         } else {
