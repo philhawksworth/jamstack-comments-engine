@@ -1,24 +1,22 @@
 {
   "/posts/another-post-perhaps-more-comments/": [
     {
-      "name": "Captain Tester",
-      "avatar": "https://s.gravatar.com/avatar/d9d7c6d159bb61f3614df3f0f22975bc?s=100&r=x&d=retro",
-      "comment": "This looks like it is working ok. But did I get some markdown formatting wrong?\r\n\r\nMarkdown *seems* to be working, but I'm not convinced of the syntax. [Links](https://hawksworx.com) seem happy.\r\n\r\n- lists are looking fine\r\n- using the dash notation at least\r\n- but what about _italics_? One underscore __or two?__\r\n\r\n",
-      "date": "2018-03-22T16:22:13.931Z"
+      "name": "Phil",
+      "avatar": "https://s.gravatar.com/avatar/465724d73fe3a92c0879fdfb43a3a6f3?s=100&r=x&d=retro",
+      "comment": "Let's fix the order of comments so that the newest is at the bottom and so you ready the tjread from top to bottom, like a normal person.\r\n\r\n\r\nAlso, is the markdown for bold actually **2 asterisks**, not 1?",
+      "date": "2018-03-22T18:27:07.053Z"
     },
-    {
-      "name": "Philip",
-      "avatar": "https://s.gravatar.com/avatar/55502f40dc8b7c769880b10874abc9d0?s=100&r=x&d=retro",
-      "comment": "Does the markdown _really_ work?\r\n\r\nThat would be great because then\r\n\r\n- I could\r\n- use lists\r\n- and include [links](https://netlify.com)",
-      "date": "2018-03-22T12:30:23.230Z"
-    }
-  ],
-  "/posts/a-post-which-you-might-comment-on/": [
     {
       "name": "Phil",
       "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
-      "comment": "another try\r\n",
-      "date": "2018-03-21T20:38:58.127Z"
+      "comment": "I should also make sure that the *Markdown* support looks ok. I'd hate for that to be broken as it's nice to be able to include some sort of formatting in comments.\r\n\r\nIt is also good to have a way to simply [post links](https://www.hawksworx.com).",
+      "date": "2018-03-22T18:24:13.837Z"
+    },
+    {
+      "name": "Phil",
+      "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
+      "comment": "This is just a test comment. Ideally the comments would mean something to for this example. But it is probably worth waiting until I have posted some posts which are also descriptive and meaningful with URLs which make sense.\r\n\r\nThat will come _soon_",
+      "date": "2018-03-22T18:21:22.717Z"
     }
   ]
 }
