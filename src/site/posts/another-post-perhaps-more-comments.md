@@ -1,8 +1,9 @@
 ---
-layout: layouts/post.njk
+layout: layouts/post.md
 title: Another post perhaps more comments
 tags: post
 date: 2018-03-21
+templateEngineOverride: njk,md
 ---
 
 Yes, this is just an example post. But that doesn't mean that it can't contain useful information. We might as well use these example pages as somewhere to say things rather than filling them up with _lorem ipsum_.

@@ -1,6 +1,7 @@
 ---
 layout: layouts/base.njk
 pageClass: post
+templateEngineOverride: njk,md
 ---
 
 

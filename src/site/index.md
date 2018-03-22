@@ -19,6 +19,6 @@ There are some blog posts below which you can comment on, or just enjoy the deli
 
 <ul class="listing">
 {%- for post in collections.post -%}
-  <li><a href="{{ post.url }}">{{ post.data.title }}</a> ({{ comments[post.url].length }} comments) </li>
+  <li><a href="{{ post.url }}">{{ post.data.title }}</a> <small>({{ comments[post.url].length }} comments)</small></li>
 {%- endfor -%}
 </ul>

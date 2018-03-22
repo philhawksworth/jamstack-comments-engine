@@ -1,17 +1,11 @@
-
-
-## does this template support _markdown_?
-
-
 {% if comments[page.url].length > 0 %}
   <h2>Comments on this page</h2>
-
-
   <ul>
   {%- for comment in comments[page.url] -%}
     <li class="comment">
-      <h3><img class="avatar" src="{{ comment.avatar }}">{{ comment.name }}</h3>
-      <time>{{ comment.date | dateDisplay }}</div>
+      <img class="avatar" src="{{ comment.avatar }}">
+      <h3>{{ comment.name }}</h3>
+      <div class="date">made the following comment, <time>{{ comment.date | dateDisplay }}</time></div>
       <div>{{ comment.comment }}</div>
     </li>
   {%- endfor -%}
