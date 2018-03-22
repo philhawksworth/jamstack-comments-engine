@@ -16,5 +16,9 @@ templateEngineOverride: njk,md
 </main>
 <div class="comments">
  {% include "comments.njk" -%}
+
+ {% if commentsClosed != true %}
  {% include "comment-form.njk" -%}
+ {% endif %}
+
 </div>

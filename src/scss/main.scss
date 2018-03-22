@@ -6,11 +6,14 @@
   padding: 0;
 }
 
+html {
+  background-color: $accent-color;
+}
+
 body {
   text-align: center;
   background-color: $page-color;
   color: mix($text-color, $page-color, 70%);
-  height: 100vh;
   background: radial-gradient(ellipse at center, rgba(17,17,17,1) 10%, rgba(50,50,50,1) 100%);
   background-attachment: fixed;
   font-family: sans-serif;
