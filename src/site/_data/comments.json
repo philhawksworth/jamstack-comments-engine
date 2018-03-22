@@ -1,1 +1,18 @@
-{"/posts/a-post-which-you-might-comment-on/":[{"name":"Phil","avatar":"https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro","comment":"another try\r\n","date":"2018-03-21T20:38:58.127Z"}]}
+{
+  "/posts/another-post-perhaps-more-comments/": [
+    {
+      "name": "Philip",
+      "avatar": "https://s.gravatar.com/avatar/55502f40dc8b7c769880b10874abc9d0?s=100&r=x&d=retro",
+      "comment": "Does the markdown _really_ work?\r\n\r\nThat would be great because then\r\n\r\n- I could\r\n- use lists\r\n- and include [links](https://netlify.com)",
+      "date": "2018-03-22T12:30:23.230Z"
+    }
+  ],
+  "/posts/a-post-which-you-might-comment-on/": [
+    {
+      "name": "Phil",
+      "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
+      "comment": "another try\r\n",
+      "date": "2018-03-21T20:38:58.127Z"
+    }
+  ]
+}

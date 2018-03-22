@@ -12,6 +12,7 @@ body {
   color: mix($text-color, $page-color, 70%);
   height: 100vh;
   background: radial-gradient(ellipse at center, rgba(17,17,17,1) 10%, rgba(50,50,50,1) 100%);
+  background-attachment: fixed;
   font-family: sans-serif;
   font-weight: 30;
   font-size: 18px;
@@ -191,7 +192,7 @@ button {
   padding-left: 3em;
   padding-right: 3em;
   font-size: 0.8em;
-  background-color: mix($accent-color, $page-color, 1%);
+  background-color: $page-color;
   border: solid 1px mix($accent-color, $page-color, 30%);
 
   ul {
