@@ -3,4 +3,6 @@ title: Thanks
 layout: layouts/base.njk
 ---
 
-Thanks for the comment.
+# Thanks. Aren't you lovely.
+
+Your comment is now in the queue for approval. Of course it will be approved. Why would it not? Once approved it will appear in the page. [Here's how](/about).

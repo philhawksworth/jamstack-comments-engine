@@ -3,7 +3,7 @@ title: all about this
 layout: layouts/base.njk
 ---
 
-# What is this?
+# What is this anyway?
 
 What is this and how was it made and how do I get one?
 
