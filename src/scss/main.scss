@@ -8,16 +8,204 @@
 
 body {
   text-align: center;
-  background-color: #fff;
+  background-color: $page-color;
+  color: mix($text-color, $page-color, 70%);
+  height: 100vh;
+  background: radial-gradient(ellipse at center, rgba(17,17,17,1) 10%, rgba(50,50,50,1) 100%);
+  font-family: sans-serif;
+  font-weight: 30;
+  font-size: 18px;
+  line-height: 1.8;
 }
 
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  text-align: left;
+}
+
+
+h1, h2, h3 {
+  line-height: 0.9em;
+  color: $text-color;
+  font-weight: 600;
+  margin-top:2.5em;
+  margin-bottom:1em;
+}
+h1 {
+  margin-top:0.4em;
+  font-size: 6em;
+}
+
+
+p {
+  margin-bottom: 1em;
+}
+
+a:link,
+a:visited {
+  color: $accent-color;
+  text-decoration: none;
+  border-bottom: solid 1px mix($text-color, $page-color, 10%);
+}
+
+a:hover,
+a:focus {
+  color: $text-color;
+  border-bottom: solid 1px $accent-color;
+}
+
+
+
 .nav {
-  margin-top: 2em;
-  margin-bottom: 2em;
+  padding-top: 3em;
 
   li {
     display: inline;
   }
 
+  a:link,
+  a:visited {
+    display: inline-block;
+    border-top: solid 1px mix($text-color,$page-color, 60%);
+    border-bottom-style: none;
+    padding-top: 0.8em;
+    padding-bottom: 2em;
+    margin-left: 0;
+    margin-right: 0.7em;
+    width: 8em;
+    text-align: left;
+    color: mix($text-color,$page-color, 80%);
+    text-decoration: none;
+  }
 
+  a:hover,
+  a:focus {
+      color: $text-color;
+      border-top: solid 1px $accent-color;
+      border-bottom-style: none;
+  }
+
+  small {
+    display: block;
+    font-size: 0.7em;
+    color: mix($text-color,$page-color, 60%);
+  }
+}
+
+
+
+.post {
+
+  h1 {
+    font-size: 4em;
+    line-height: 1.1em;
+    margin-bottom: 0.2em;
+  }
+
+  main {
+    margin-top: 2em;
+    margin-bottom: 3em;
+    padding-bottom: 4em;
+    padding-top: 4em;
+    border-top: solid 1px mix($text-color, $page-color, 10%);
+    border-bottom: solid 1px mix($text-color, $page-color, 10%);
+  }
+
+}
+
+.date {
+  color: mix($text-color, $page-color, 30%);
+  font-size: 0.7em;
+
+  time {
+    color: mix($text-color, $page-color, 50%);
+  }
+}
+
+
+form {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  .honey {
+    visibility: hidden;
+    height:1px;
+    overflow:none;
+  }
+   label {
+     display: block;
+     font-size: 1.1em;
+     color: $text-color;
+     margin-top:1em;
+     margin-bottom:0.6em;
+   }
+   small {
+     display: block;
+     font-size: 0.7em;
+     color: mix($text-color, $page-color, 50%)
+   }
+
+  input, textarea {
+    width: 100%;
+    border: solid 2px mix($text-color, $page-color, 70%);
+    background-color: mix($text-color, $page-color, 2%);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 4px;
+    font-size: 16px;
+    color: $text-color;
+   }
+   textarea {
+     height:8em;
+   }
+}
+
+button {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 0.5em 1em 0.5em 1em;
+  background-color: mix($text-color, $page-color, 80%);
+  border-radius: 2px;
+  color: $page-color;
+  font-size: 1em;
+  &:hover,
+  &:focus {
+    background-color: $text-color;
+    color: $page-color;
+    cursor: pointer;
+  }
+}
+
+
+.hidden {
+  display:none;
+}
+
+
+.note {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  padding-top: 0em;
+  padding-bottom: 3em;
+  padding-left: 3em;
+  padding-right: 3em;
+  font-size: 0.8em;
+  background-color: mix($accent-color, $page-color, 1%);
+  border: solid 1px mix($accent-color, $page-color, 30%);
+
+  ul {
+    list-style: inside;
+  }
+}
+
+
+
+footer {
+  margin-top: 6em;
+  padding-top: 4em;
+  padding-bottom: 6em;
+  border-top: solid 1px mix($text-color, $page-color, 10%);
+  font-size: 0.7em;
+  color: mix($text-color, $page-color, 40%);
 }

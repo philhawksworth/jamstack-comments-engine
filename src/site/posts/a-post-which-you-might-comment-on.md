@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-title: a post which you might comment on
+title: A post which you might comment on
 tags: post
 date: 2018-07-02
 ---

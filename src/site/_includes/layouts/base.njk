@@ -7,13 +7,20 @@
     <title>{{ title }}</title>
   </head>
   <body class="{{ pageClass }}">
+    <div class="container">
     <header>
       <ul class="nav">
-        <li><a href="/">home</a></li>
-        <li><a href="/about">about</a></li>
+        <li>
+          <a href="/">home<small>where the links are</small></a>
+        </li>
+        <li>
+          <a href="/about">about<small>where the info is</small></a>
+        </li>
       </ul>
-    </header >
+    </header>
     {{ content | safe }}
+    {% include "footer.njk" %}
+    </div>
   </body>
 </html>
 

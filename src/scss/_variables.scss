@@ -5,8 +5,8 @@ $bp-mid: "(min-width: 740px)";
 $bp-wide: "(min-width: 1200px)";
 
 // Colours
-$page-color: #fff;
-$text-color: #000;
+$page-color: #222;
+$text-color: #eee;
 $accent-color: rgb(192, 255, 17);
 $faint-accent-color: mix($accent-color, $page-color, 15%);
 $dull-accent-color: mix($accent-color, $page-color, 50%);

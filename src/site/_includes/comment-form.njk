@@ -1,12 +1,19 @@
 <h2>Leave a comment</h2>
+<p>
+  Comments posted here will go into a moderation queue and the owner of the site will be nortified via Slack.
+  Once approved, it will be pulled into the content and the site will be regenerated and deployed.
+</p>
+<p>
+  For more information about how this works, take a look at the <a href="/about">About</a> page.
+</p>
 
-<form name="comments-queue" netlify-honeypot="full-name" action="thanks" netlify>
+<form name="comments-queue" netlify-honeypot="full-name" action="/thanks" netlify>
   <p class="honey">
+    <input name="path" value="{{ page.url }}">
     <label>Your full name: <input name="full-name"></label>
-    <label>Path: <input name="path" value="{{ page.url }}"></label>
   </p>
   <p>
-    <label for="name">Your name<small>What should I call you?.</small></label>
+    <label for="name">Your name<small>What should I call you?</small></label>
     <input type="text" name="name" id="name">
   </p>
   <p>
