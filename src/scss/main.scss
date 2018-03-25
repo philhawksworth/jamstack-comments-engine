@@ -7,7 +7,6 @@
 }
 
 
-
 ::-moz-selection {
   background-color: $accent-color;
   color: $page-color;
@@ -83,6 +82,15 @@ ul {
     display: block;
     margin-top: -0.2em;
     margin-bottom: 0.5em;
+  }
+}
+
+ol {
+
+  li {
+    list-style-position: outside;
+    margin-left: 2em;
+    margin-bottom: 0.8em;
   }
 }
 
