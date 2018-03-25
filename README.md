@@ -7,7 +7,11 @@ Built on Netlify
 
 ## Setting up
 
-1. Clone the repo and deploy it as a netlify (with one click vie this DTN button)
+1. Clone the repo and deploy it as a netlify (with one click via this DTN button)
+
+<!-- Markdown snippet -->
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/philhawksworth/jamstack-comments-engine)
+
 2. Configure a Slack integration on your Slack account
 3. Add the required environment variables for:
   - API_AUTH
