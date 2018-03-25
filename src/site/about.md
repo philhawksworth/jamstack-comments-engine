@@ -35,8 +35,8 @@ You can get your own instance of this example site up and running on Netlify ver
 
 Good question. Here's what it will do...
 
-1. We'll clone the git repository of this project into your Github account. We'll be asking for permission to add the repo for you.
-2. We'll create a new site for you in Netlify, and configure it to use your shiny new repo. Right away you'll be able to deploy changes simply by pushing changes to your repo.
+1. We'll clone the [git repository](https://github.com/philhawksworth/jamstack-comments-engine) of this project into your Github account. We'll be asking for permission to add the repo for you.
+2. We'll create a new site for you in [Netlify](https://www.netlify.com), and configure it to use your shiny new repo. Right away you'll be able to deploy changes simply by pushing changes to your repo.
 3. You'll need to do a little config in order to integrate with Slack etc. There are some [instructions](https://github.com/philhawksworth/jamstack-comments-engine/blob/master/README.md) to help get you set up
 4. That's it really.
 
