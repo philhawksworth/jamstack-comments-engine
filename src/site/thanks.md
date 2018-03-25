@@ -1,5 +1,5 @@
 ---
-title: Thanks
+title: JAMstack Comments Engine - thanks!
 layout: layouts/base.njk
 ---
 

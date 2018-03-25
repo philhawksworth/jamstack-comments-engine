@@ -1,5 +1,5 @@
 ---
-title: A snazzy blog
+title: JAMstack Comments Engine
 layout: layouts/base.njk
 ---
 

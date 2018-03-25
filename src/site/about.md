@@ -1,5 +1,5 @@
 ---
-title: all about this
+title: JAMstack Comments Engine - about
 layout: layouts/base.njk
 ---
 
