@@ -4,7 +4,7 @@ title: Enough discussion. Comments on this page are closed
 tags: post
 date: 2018-03-23
 templateEngineOverride: njk,md
-commentsClosed: flase
+commentsClosed: true
 ---
 
 It can be useful to close comments on a page after a while. Either the conversation has reached a natural end, or perhaps the page has become so popular that it is attracting more attention than we can cope with!
