@@ -5,7 +5,7 @@ layout: layouts/base.njk
 
 # Jamstack Comments Engine
 
-This example uses a comments system which is little more than a form handler and Lambda function from Netlify. Have a look around and then perhaps [get a version of your own](/about) to tinker with.
+This example site demonstrates a comments system build by combining form handling, serverless functions, and build triggers on Netlify. Try it out by exploring one of the pages listed below, and then perhaps [learn more or get a version of your own](/about) to explore further.
 
 {% if init.environment == false %}
   {% include "setup-hint.njk" -%}
@@ -14,7 +14,7 @@ This example uses a comments system which is little more than a form handler and
 
 ## Some pages with comments
 
-There are some pages below which you can comment on, or just enjoy the delicious and insightful comments others have left there for you. It's also possible to close the comments on any page if it all just gets too much.
+There are some pages listed below which include comments. You can try adding a comment of your own, or just enjoy the delicious and insightful comments others have left there for you.
 
 <ul class="listing">
 {%- for post in collections.post -%}
