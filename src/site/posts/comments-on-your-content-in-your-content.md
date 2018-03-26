@@ -4,7 +4,6 @@ title: Comments on your content, in your content
 tags: post
 date: 2018-03-21
 templateEngineOverride: njk,md
-commentsClosed: false
 ---
 
 There are a few solutions out there for adding comments to your site without the need to make your own commenting system. So why bother with this?

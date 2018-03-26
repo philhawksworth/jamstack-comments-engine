@@ -1,27 +1,81 @@
 {
+  "/posts/enough-discussion-closing-comments/": [
+    {
+      "name": "Phil Hawksworth",
+      "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
+      "comment": "\nOk. Hush now. I'm going to close comments on this page. All the existing comments will remain, but there will no longer be a form to post comments with.",
+      "date": "2018-03-26T22:47:19.031Z"
+    },
+    {
+      "name": "Annony Mouse",
+      "avatar": "https://s.gravatar.com/avatar/97250817aa5c2f1a3582c4097d980477?s=100&r=x&d=retro",
+      "comment": "\nI've got lots of ranty things to say and this text box is exactly where I'm going to say them all.",
+      "date": "2018-03-26T22:45:20.936Z"
+    },
+    {
+      "name": "Phil Hawksworth",
+      "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
+      "comment": "\nI guess though, that sometimes when lots of people get passionate about things, the conversations can get out of hand, or off topic.",
+      "date": "2018-03-26T22:44:01.300Z"
+    },
+    {
+      "name": "Phil Hawksworth",
+      "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
+      "comment": "\nComments are wonderful! I'll never get tired of all of the things people will want to post here for discussion.",
+      "date": "2018-03-26T22:43:55.969Z"
+    }
+  ],
+  "/posts/no-performance-bottlenecks/": [
+    {
+      "name": "Phil Hawksworth",
+      "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
+      "comment": "\nWhere does the content come from? Well, at build time, it is pulled from Netlify's [form submissions API](https://www.netlify.com/docs/api/)",
+      "date": "2018-03-26T22:42:13.085Z"
+    },
+    {
+      "name": "Phil Hawksworth",
+      "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
+      "comment": "\nThat should be good news for anyone who cares about performance (which should be everyone!).",
+      "date": "2018-03-26T22:42:10.334Z"
+    }
+  ],
+  "/posts/comments-on-your-content-in-your-content/": [
+    {
+      "name": "Phil Hawksworth",
+      "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
+      "comment": "\nThis approach should work nicely with most any [static site generator](https://www.staticgen.com). ",
+      "date": "2018-03-26T22:38:44.099Z"
+    },
+    {
+      "name": "Phil",
+      "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
+      "comment": "\nThis content should be here when the page loads up. No waiting for javascript or any third party services. That should have all happened at site build time.",
+      "date": "2018-03-26T22:36:34.428Z"
+    }
+  ],
   "/posts/a-post-which-you-might-comment-on/": [
     {
       "name": "Phil",
       "avatar": "https://s.gravatar.com/avatar/55502f40dc8b7c769880b10874abc9d0?s=100&r=x&d=retro",
-      "comment": "We should really have notifications to slack when the build completes so we can see when it is worth taking a look at the comment on the site.\r\n\r\nOh.... that's done. Yay!",
+      "comment": "\nWe should really have notifications to slack when the build completes so we can see when it is worth taking a look at the comment on the site.\r\n\r\nOh.... that's done. Yay!",
       "date": "2018-03-25T19:28:49.546Z"
     },
     {
       "name": "Phil",
       "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
-      "comment": "Testing this again, but I *really* should add proper blog posts next.",
+      "comment": "\nTesting this again, but I *really* should add proper blog posts next.",
       "date": "2018-03-25T18:28:39.559Z"
     },
     {
       "name": "Somebody anonymous",
       "avatar": "https://s.gravatar.com/avatar/3150fd42a3442786a74afdae5c6a93d9?s=100&r=x&d=retro",
-      "comment": "The gravatar support will return a generated avatar I'd a real avatar is not set for this email.",
+      "comment": "\nThe gravatar support will return a generated avatar I'd a real avatar is not set for this email.",
       "date": "2018-03-24T11:16:44.353Z"
     },
     {
       "name": "Phil",
       "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
-      "comment": "This page deserves some comments too!",
+      "comment": "\nThis page deserves some comments too!",
       "date": "2018-03-24T11:14:34.646Z"
     }
   ],
@@ -29,25 +83,25 @@
     {
       "name": "Matt",
       "avatar": "https://s.gravatar.com/avatar/912f6347aa7220d1ab083dd271ec111a?s=100&r=x&d=retro",
-      "comment": "Very cool!",
+      "comment": "\nVery cool!",
       "date": "2018-03-25T19:13:40.420Z"
     },
     {
       "name": "Phil",
       "avatar": "https://s.gravatar.com/avatar/465724d73fe3a92c0879fdfb43a3a6f3?s=100&r=x&d=retro",
-      "comment": "Let's fix the order of comments so that the newest is at the bottom and so you ready the tjread from top to bottom, like a normal person.\r\n\r\n\r\nAlso, is the markdown for bold actually **2 asterisks**, not 1?",
+      "comment": "\nLet's fix the order of comments so that the newest is at the bottom and so you ready the tjread from top to bottom, like a normal person.\r\n\r\n\r\nAlso, is the markdown for bold actually **2 asterisks**, not 1?",
       "date": "2018-03-22T18:27:07.053Z"
     },
     {
       "name": "Phil",
       "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
-      "comment": "I should also make sure that the *Markdown* support looks ok. I'd hate for that to be broken as it's nice to be able to include some sort of formatting in comments.\r\n\r\nIt is also good to have a way to simply [post links](https://www.hawksworx.com).",
+      "comment": "\nI should also make sure that the *Markdown* support looks ok. I'd hate for that to be broken as it's nice to be able to include some sort of formatting in comments.\r\n\r\nIt is also good to have a way to simply [post links](https://www.hawksworx.com).",
       "date": "2018-03-22T18:24:13.837Z"
     },
     {
       "name": "Phil",
       "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
-      "comment": "This is just a test comment. Ideally the comments would mean something to for this example. But it is probably worth waiting until I have posted some posts which are also descriptive and meaningful with URLs which make sense.\r\n\r\nThat will come _soon_",
+      "comment": "\nThis is just a test comment. Ideally the comments would mean something to for this example. But it is probably worth waiting until I have posted some posts which are also descriptive and meaningful with URLs which make sense.\r\n\r\nThat will come _soon_",
       "date": "2018-03-22T18:21:22.717Z"
     }
   ]

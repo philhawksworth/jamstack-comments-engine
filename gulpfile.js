@@ -108,7 +108,7 @@ gulp.task("get:comments", function () {
         var comment = {
           name: data.name,
           avatar: gravatar.url(data.email, {s: '100', r: 'x', d: 'retro'}, true),
-          comment: data.comment,
+          comment: "\n" + data.comment,
           date: body[item].created_at
         };
 

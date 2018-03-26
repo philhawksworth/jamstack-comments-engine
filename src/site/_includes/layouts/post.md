@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 pageClass: post
-templateEngineOverride: njk,md
+templateEngineOverride: njk, md
 ---
 
 <h1>{{ title }}</h1>
@@ -26,7 +26,7 @@ templateEngineOverride: njk,md
 {% else %}
   <div class="footnote">
     <p>
-      comments on this page are now closed. Perhaps express your opinions about this <a href="https://twitter.com/intent/tweet?text=I%20need%20to%20tell%20the%20world%20about%20this!&url={{ init.rootURL }}/{{ page.url }}">on twitter</a> instead?
+      comments on this page are now closed. Perhaps express your opinions about this <a href="https://twitter.com/intent/tweet?text=I%20need%20to%20tell%20the%20world%20about%20this!&url={{ init.rootURL }}{{ page.url }}">on twitter</a> instead?
     </p>
   </div>
 {% endif %}
