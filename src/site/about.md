@@ -11,7 +11,7 @@ All comments are posted a form, and once approved rendered directly onto the sit
 
 It is a living example and you can try commenting on the [pages](/) listed on the home page. (The [site owner](https://twitter.com/philhawksworth) will get a notification of your comment via Slack, but and will need to approve your comment before it shows up, so be patient).
 
-## How ths comments work
+## How do the comments work?
 
 Rather than using a third party comments service which might inject comments (and other things?!) into your site using JavaScript, this approach uses traditional http form posts and continuous integration to automatically build your comments directly into your site.
 
