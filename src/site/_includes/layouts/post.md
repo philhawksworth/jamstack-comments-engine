@@ -23,5 +23,11 @@ templateEngineOverride: njk,md
 {# Unless we have disabled comments for this page, add a comments form #}
 {% if commentsClosed != true %}
 {% include "comment-form.njk" -%}
+{% else %}
+  <div class="footnote">
+    <p>
+      comments on this page are now closed. Perhaps express your opinions about this <a href="https://twitter.com/intent/tweet?text=I%20need%20to%20tell%20the%20world%20about%20this!&url={{ init.rootURL }}/{{ page.url }}">on twitter</a> instead?
+    </p>
+  </div>
 {% endif %}
 </div>
