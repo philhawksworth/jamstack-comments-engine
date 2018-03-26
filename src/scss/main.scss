@@ -281,6 +281,33 @@ button {
   }
 }
 
+code {
+  font-size: 0.9em;
+  background-color: mix($text-color, $page-color, 10%);
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-radius: 3px;
+}
+
+
+.footnote {
+
+  margin-top: 3em;
+  font-size: 0.8em;
+  font-style: italic;
+  color: mix($text-color, $page-color, 30%);
+
+  a:link,
+  a:visited {
+    color: mix($accent-color, $page-color, 50%);
+  }
+  a:hover,
+  a:focus {
+    color: $text-color;
+  }
+}
 
 
 footer {

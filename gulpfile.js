@@ -10,26 +10,37 @@ var fs          = require('fs');
 var config      = require('dotenv').config()
 
 
-// what goes where?
+/*
+  what goes where?
+*/
 var buildSrc = "src";
 var buildDest = "dist";
 
 
-// cleanup the build output
+
+/*
+  cleanup the build output
+*/
 gulp.task('clean-build', function () {
   return gulp.src(buildDest, {read: false})
     .pipe(clean());
 });
 
 
-// local webserver for development
+
+/*
+  local webserver for development
+*/
 gulp.task('serve', serve({
   root: [buildDest],
   port: 8008,
 }));
 
 
-// Compile SCSS files to CSS
+
+/*
+  Compile SCSS files to CSS
+*/
 gulp.task("scss", function () {
   gulp.src(buildSrc + "/scss/main.scss")
     .pipe(sass({
@@ -126,18 +137,31 @@ gulp.task("get:comments", function () {
 /*
   Watch src folder for changes
 */
-gulp.task("watch", ['build'], function () {
-  gulp.watch(buildSrc + "/**/*", ["build"])
+gulp.task("watch", function () {
+  gulp.watch(buildSrc + "/**/*", ["build:local"])
 });
 
 
 
 /*
-  Let's build thus sucker.
+  Let's build thus sucker for production
 */
 gulp.task('build', function(callback) {
   runSequence(
     ['clean-build','check-init', 'get:comments'],
+    ['generate', 'scss'],
+    callback
+  );
+});
+
+
+
+/*
+  Let's build this for local development
+*/
+gulp.task('build:local', function(callback) {
+  runSequence(
+    ['clean-build'],
     ['generate', 'scss'],
     callback
   );

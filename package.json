@@ -5,8 +5,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "yarn run build && yarn run watch",
+    "start": "yarn run build:local && yarn run watch",
     "build": "gulp build && yarn run build:functions",
+    "build:local": "gulp build:local && yarn run build:functions",
     "build:functions": "netlify-lambda build src/lambda",
     "watch": "gulp watch & gulp serve"
   },
