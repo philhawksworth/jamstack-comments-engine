@@ -7,7 +7,7 @@ layout: layouts/base.njk
 
 This site is an example of how a [JAMstack](https://www.jamstack.org) site can implement comments.
 
-All comments are posted a form, and once approved rendered directly onto the site via a build with no JavaScript required to pull in and them into your browser for rendering.
+All comments are posted with a form and once approved, rendered directly onto the site via a build. No JavaScript is required to pull them into your browser for rendering.
 
 It is a living example and you can try commenting on the [pages](/) listed on the home page. (The [site owner](https://twitter.com/philhawksworth) will get a notification of your comment via Slack, and will need to approve your comment before it shows up, so be patient).
 
