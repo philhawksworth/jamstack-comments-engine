@@ -2,16 +2,16 @@
 # yarn lockfile v1
 
 
-"@11ty/eleventy@^0.2.15":
-  version "0.2.15"
-  resolved "https://registry.yarnpkg.com/@11ty/eleventy/-/eleventy-0.2.15.tgz#19d058b5141ea5e6baedc2b9d8bf8a4b07b0d3ec"
+"@11ty/eleventy@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@11ty/eleventy/-/eleventy-0.3.0.tgz#9bd22de3fe2ae26eabac14ad7839a2cf38b1bb7b"
   dependencies:
-    chalk "^2.3.0"
-    check-node-version "^3.1.1"
+    chalk "^2.3.2"
+    check-node-version "^3.2.0"
     debug "^3.1.0"
-    ejs "^2.5.7"
-    fs-extra "^4.0.2"
-    glob-watcher "^4.0.0"
+    ejs "^2.5.8"
+    fs-extra "^5.0.0"
+    glob-watcher "^5.0.1"
     globby "^7.1.1"
     gray-matter "^3.1.1"
     hamljs "^0.6.2"
@@ -21,21 +21,21 @@
     lodash.clonedeep "^4.5.0"
     lodash.get "^4.4.2"
     lodash.isobject "^3.0.2"
-    lodash.merge "^4.6.0"
+    lodash.merge "^4.6.1"
     lodash.set "^4.3.2"
     lodash.uniq "^4.5.0"
-    luxon "^0.2.12"
-    markdown-it "^8.4.0"
+    luxon "^1.0.0"
+    markdown-it "^8.4.1"
     minimist "^1.2.0"
     multimatch "^2.1.0"
     mustache "^2.3.0"
     normalize-path "^2.1.1"
-    nunjucks "^3.0.1"
-    parse-filepath "^1.0.1"
+    nunjucks "^3.1.2"
+    parse-filepath "^1.0.2"
     pify "^3.0.0"
     pretty "^2.0.0"
-    pug "^2.0.0-rc.4"
-    slugify "^1.2.7"
+    pug "^2.0.3"
+    slugify "^1.2.9"
     time-require "^0.1.2"
     valid-url "^1.0.9"
 
@@ -1078,7 +1078,7 @@ chalk@^1.0.0, chalk@^1.1.1, chalk@^1.1.3:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-chalk@^2.3.0:
+chalk@^2.3.0, chalk@^2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.3.2.tgz#250dc96b07491bfd601e648d66ddf5f60c7a5c65"
   dependencies:
@@ -1092,7 +1092,7 @@ character-parser@^2.1.1:
   dependencies:
     is-regex "^1.0.3"
 
-check-node-version@^3.1.1:
+check-node-version@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/check-node-version/-/check-node-version-3.2.0.tgz#783a4292dbf76d6b8294b23abece33682b4a7cce"
   dependencies:
@@ -1104,7 +1104,7 @@ check-node-version@^3.1.1:
     run-parallel "^1.1.4"
     semver "^5.0.3"
 
-chokidar@^1.4.3, chokidar@^1.6.0:
+chokidar@^1.6.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-1.7.0.tgz#798e689778151c8076b4b360e5edd28cda2bb468"
   dependencies:
@@ -1118,6 +1118,24 @@ chokidar@^1.4.3, chokidar@^1.6.0:
     readdirp "^2.0.0"
   optionalDependencies:
     fsevents "^1.0.0"
+
+chokidar@^2.0.0:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-2.0.3.tgz#dcbd4f6cbb2a55b4799ba8a840ac527e5f4b1176"
+  dependencies:
+    anymatch "^2.0.0"
+    async-each "^1.0.0"
+    braces "^2.3.0"
+    glob-parent "^3.1.0"
+    inherits "^2.0.1"
+    is-binary-path "^1.0.0"
+    is-glob "^4.0.0"
+    normalize-path "^2.1.1"
+    path-is-absolute "^1.0.0"
+    readdirp "^2.0.0"
+    upath "^1.0.0"
+  optionalDependencies:
+    fsevents "^1.1.2"
 
 chokidar@^2.0.2:
   version "2.0.2"
@@ -1591,9 +1609,9 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
-ejs@^2.5.7:
-  version "2.5.7"
-  resolved "https://registry.yarnpkg.com/ejs/-/ejs-2.5.7.tgz#cc872c168880ae3c7189762fd5ffc00896c9518a"
+ejs@^2.5.8:
+  version "2.5.8"
+  resolved "https://registry.yarnpkg.com/ejs/-/ejs-2.5.8.tgz#2ab6954619f225e6193b7ac5f7c39c48fefe4380"
 
 elliptic@^6.0.0:
   version "6.4.0"
@@ -2068,9 +2086,9 @@ fresh@0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
 
-fs-extra@^4.0.2:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-4.0.3.tgz#0d852122e5bc5beb453fb028e9c0c9bf36340c94"
+fs-extra@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-5.0.0.tgz#414d0110cdd06705734d055652c5411260c31abd"
   dependencies:
     graceful-fs "^4.1.2"
     jsonfile "^4.0.0"
@@ -2080,7 +2098,7 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
 
-fsevents@^1.0.0:
+fsevents@^1.0.0, fsevents@^1.1.2:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-1.1.3.tgz#11f82318f5fe7bb2cd22965a108e9306208216d8"
   dependencies:
@@ -2202,12 +2220,12 @@ glob-watcher@^0.0.6:
   dependencies:
     gaze "^0.5.1"
 
-glob-watcher@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/glob-watcher/-/glob-watcher-4.0.0.tgz#9e63a8ff6e61e932de6cc2caece5071a6d737329"
+glob-watcher@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/glob-watcher/-/glob-watcher-5.0.1.tgz#239aaa621b6bd843b288fdf6b155f50963c7d7ea"
   dependencies:
     async-done "^1.2.0"
-    chokidar "^1.4.3"
+    chokidar "^2.0.0"
     just-debounce "^1.0.0"
     object.defaults "^1.1.0"
 
@@ -3239,7 +3257,7 @@ lodash.keys@^3.0.0:
     lodash.isarguments "^3.0.0"
     lodash.isarray "^3.0.0"
 
-lodash.merge@^4.6.0:
+lodash.merge@^4.6.1:
   version "4.6.1"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.1.tgz#adc25d9cb99b9391c59624f379fbba60d7111d54"
 
@@ -3335,9 +3353,9 @@ lru-cache@^4.0.1:
     pseudomap "^1.0.2"
     yallist "^2.1.2"
 
-luxon@^0.2.12:
-  version "0.2.12"
-  resolved "https://registry.yarnpkg.com/luxon/-/luxon-0.2.12.tgz#a5edc7a9439ceb605bd400420c4bad657d25a161"
+luxon@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.0.0.tgz#ec1cba8cf53be14d2375c2f17e3468eb195c20bb"
 
 make-dir@^1.0.0:
   version "1.2.0"
@@ -3369,7 +3387,7 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-markdown-it@^8.4.0:
+markdown-it@^8.4.1:
   version "8.4.1"
   resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-8.4.1.tgz#206fe59b0e4e1b78a7c73250af9b34a4ad0aaf44"
   dependencies:
@@ -3755,7 +3773,7 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
-nunjucks@^3.0.1:
+nunjucks@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/nunjucks/-/nunjucks-3.1.2.tgz#85945a66bb8239bb37ecef83dab4cc1f152aabb9"
   dependencies:
@@ -3946,7 +3964,7 @@ parse-asn1@^5.0.0:
     evp_bytestokey "^1.0.0"
     pbkdf2 "^3.0.3"
 
-parse-filepath@^1.0.1:
+parse-filepath@^1.0.1, parse-filepath@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/parse-filepath/-/parse-filepath-1.0.2.tgz#a632127f53aaf3d15876f5872f3ffac763d6c891"
   dependencies:
@@ -4262,7 +4280,7 @@ pug-walk@^1.1.7:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/pug-walk/-/pug-walk-1.1.7.tgz#c00d5c5128bac5806bec15d2b7e7cdabe42531f3"
 
-pug@^2.0.0-rc.4:
+pug@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/pug/-/pug-2.0.3.tgz#71cba82537c95a5eab7ed04696e4221f53aa878e"
   dependencies:
@@ -4775,7 +4793,7 @@ slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
 
-slugify@^1.2.7:
+slugify@^1.2.9:
   version "1.2.9"
   resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.2.9.tgz#c3d518f5136b3c69345d5d0bbbcde7412b5694aa"
 

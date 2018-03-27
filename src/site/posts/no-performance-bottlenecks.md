@@ -1,9 +1,7 @@
 ---
-layout: layouts/post.md
 title: No performance bottlenecks
-tags: post
 date: 2018-03-22
-templateEngineOverride: njk,md
+tags: post
 ---
 
 Performance matters. This method of including comments into your site does not depend on third party JavaScript running in your browser or injecting content into your page.

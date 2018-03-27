@@ -12,7 +12,7 @@
     "watch": "gulp watch & gulp serve"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.2.15",
+    "@11ty/eleventy": "^0.3.0ya",
     "dotenv": "^5.0.1",
     "gravatar": "^1.6.0",
     "gulp": "^3.9.1",
