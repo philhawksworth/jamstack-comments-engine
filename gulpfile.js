@@ -70,24 +70,41 @@ gulp.task('check-init', function () {
 
   // Look for the environment variables
   if(process.env.APPROVED_COMMENTS_FORM_ID && process.env.API_AUTH && process.env.SLACK_WEBHOOK_URL ) {
-    console.log("Required ENV VARS found.");
     var initStatus = {"environment" : true};
   } else {
-    console.log("Required ENV VARS missing.");
     var initStatus = {"environment" : false};
   }
 
-  // add the root URL being used in this enviromment
-  initStatus['rootURL'] = process.env.URL;
+  // Automatically detect and set the comments queue form environment variable.
+  var siteDomain = process.env.URL.split("://")[1];
+  var url = `https://api.netlify.com/api/v1/sites/${siteDomain}/forms/?access_token=${process.env.API_AUTH}`;
 
-  // save the status of our environment somewhere that our SSG can access it
-  fs.writeFile(buildSrc + "/site/_data/init.json", JSON.stringify(initStatus), function(err) {
-    if(err) {
-      console.log(err);
+  request(url, function(err, response, body){
+    if(!err && response.statusCode === 200){
+      var body = JSON.parse(body);
+      var approvedForm = body.filter(function(f){
+        return f.name == 'approved-comments';
+      });
+      // add the form id  and root URL to our init data stash
+      initStatus['approved_form_id'] = approvedForm[0].id;
+      initStatus['rootURL'] = process.env.URL;
+      initStatus['siteName'] = siteDomain.replace('.netlify.com', '');
+      // save the status of our environment somewhere that our SSG can access it
+      // REFACTOR: do this conditionally.. not for every build after envs are init'd
+      fs.writeFile(buildSrc + "/site/_data/init.json", JSON.stringify(initStatus), function(err) {
+        if(err) {
+          console.log(err);
+        }
+      });
+    } else {
+      console.log("Couldn't detect a APPROVED_FORM from the API");
     }
   });
 
 });
+
+
+
 
 
 
