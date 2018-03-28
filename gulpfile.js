@@ -75,7 +75,6 @@ gulp.task('check-init', function () {
   } else {
     console.log("Required ENV VARS missing.");
     var initStatus = {"environment" : false};
-
   }
 
   // Automatically detect and set the comments queue form environment variable.
@@ -91,23 +90,22 @@ gulp.task('check-init', function () {
       initStatus['approved_form_id'] = approvedForm[0].id;
     } else {
       console.log("Couldn't detect a APPROVED_FORM from the API");
+      // add the root URL being used in this environment
+      initStatus['rootURL'] = process.env.URL;
+      console.log( "INIT data");
+      console.log(JSON.stringify(initStatus));
+      // save the status of our environment somewhere that our SSG can access it
+      fs.writeFile(buildSrc + "/site/_data/init.json", JSON.stringify(initStatus), function(err) {
+        if(err) {
+          console.log(err);
+        }
+      });
+
     }
   });
 
-  // add the root URL being used in this environment
-  initStatus['rootURL'] = process.env.URL;
 
 
-  console.log( "INIT data");
-  console.log(JSON.stringify(initStatus));
-
-
-  // save the status of our environment somewhere that our SSG can access it
-  fs.writeFile(buildSrc + "/site/_data/init.json", JSON.stringify(initStatus), function(err) {
-    if(err) {
-      console.log(err);
-    }
-  });
 
 });
 
