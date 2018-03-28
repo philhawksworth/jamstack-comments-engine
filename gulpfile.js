@@ -80,6 +80,9 @@ gulp.task('check-init', function () {
   // Automatically detect and set the comments queue form environment variable.
   var siteDomain = process.env.URL.split("://")[1];
   var url = `https://api.netlify.com/api/v1/sites/${siteDomain}/forms/?access_token=${process.env.API_AUTH}`;
+
+  console.log('Looking for form ID via', url);
+
   request(url, function(err, response, body){
     if(!err && response.statusCode === 200){
       var body = JSON.parse(body);
@@ -88,8 +91,6 @@ gulp.task('check-init', function () {
       });
       // add the form id to our init data stash
       initStatus['approved_form_id'] = approvedForm[0].id;
-    } else {
-      console.log("Couldn't detect a APPROVED_FORM from the API");
       // add the root URL being used in this environment
       initStatus['rootURL'] = process.env.URL;
       console.log( "INIT data");
@@ -100,7 +101,8 @@ gulp.task('check-init', function () {
           console.log(err);
         }
       });
-
+    } else {
+      console.log("Couldn't detect a APPROVED_FORM from the API");
     }
   });
 
