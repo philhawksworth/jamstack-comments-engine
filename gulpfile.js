@@ -105,7 +105,7 @@ gulp.task('generate', shell.task('eleventy --config=eleventy.js'));
 gulp.task("get:comments", function () {
 
   // set up our request with appropriate auth token and Form ID
-  var url = `https://api.netlify.com/api/v1/forms/${process.env.QUEUED_COMMENTS_FORM_ID}/submissions/?access_token=${process.env.API_AUTH}`;
+  var url = `https://api.netlify.com/api/v1/forms/${process.env.QUEUED_COMMENTS_FORM_ID_COMMENTS_FORM_ID}/submissions/?access_token=${process.env.API_AUTH}`;
 
   // Go and get the data from Netlify's submissions API
   request(url, function(err, response, body){
