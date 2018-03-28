@@ -68,6 +68,7 @@ gulp.task("js", function () {
 */
 gulp.task('check-init', function () {
 
+  // Automatically detect and set the comments queue form environment variable.
   var url = `https://api.netlify.com/api/v1/sites/${process.env.URL}/forms/?access_token=${process.env.API_AUTH}`;
 
   // Go and get the data from Netlify's submissions API
