@@ -69,7 +69,7 @@ gulp.task("js", function () {
 gulp.task('check-init', function () {
 
   // Look for the environment variables
-  if(process.env.APPROVED_COMMENTS_FORM_ID && process.env.API_AUTH && process.env.SLACK_WEBHOOK_URL ) {
+  if(process.env.QUEUED_COMMENTS_FORM_ID && process.env.API_AUTH && process.env.SLACK_WEBHOOK_URL ) {
     console.log("Required ENV VARS found.");
     var initStatus = {"environment" : true};
   } else {
@@ -105,7 +105,7 @@ gulp.task('generate', shell.task('eleventy --config=eleventy.js'));
 gulp.task("get:comments", function () {
 
   // set up our request with appropriate auth token and Form ID
-  var url = `https://api.netlify.com/api/v1/forms/${process.env.APPROVED_COMMENTS_FORM_ID}/submissions/?access_token=${process.env.API_AUTH}`;
+  var url = `https://api.netlify.com/api/v1/forms/${process.env.QUEUED_COMMENTS_FORM_ID}/submissions/?access_token=${process.env.API_AUTH}`;
 
   // Go and get the data from Netlify's submissions API
   request(url, function(err, response, body){
@@ -120,7 +120,7 @@ gulp.task("get:comments", function () {
         var comment = {
           name: data.name,
           avatar: gravatar.url(data.email, {s: '100', r: 'x', d: 'retro'}, true),
-          comment: "\n" + data.comment,
+          comment: "\n" + data.comment, // add a newline before the markdown so that 11ty can spot the markdown and interpret it.
           date: body[item].created_at
         };
 
