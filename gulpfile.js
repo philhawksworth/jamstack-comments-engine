@@ -159,12 +159,13 @@ gulp.task("watch", function () {
 
 
 /*
-  Let's build thus sucker for production
+  Let's build this sucker for production
 */
 gulp.task('build', function(callback) {
   runSequence(
     ['clean-build','check-init', 'get:comments'],
-    ['generate', 'scss'],
+    ['generate'],
+    ['scss', 'js'],
     callback
   );
 });
