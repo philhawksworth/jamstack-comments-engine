@@ -98,6 +98,10 @@ gulp.task('check-init', function () {
   initStatus['rootURL'] = process.env.URL;
 
 
+  console.log( "INIT data");
+  console.log(JSON.stringify(initStatus));
+
+
   // save the status of our environment somewhere that our SSG can access it
   fs.writeFile(buildSrc + "/site/_data/init.json", JSON.stringify(initStatus), function(err) {
     if(err) {
