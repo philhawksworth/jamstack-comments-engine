@@ -68,6 +68,32 @@ gulp.task("js", function () {
 */
 gulp.task('check-init', function () {
 
+
+  // var formsData = [ { id: '5ab2b81488490b0f6c50f8fd',
+  //   site_id: '9859aca9-0a82-49d4-9ae9-eefcbb4c4129',
+  //   name: 'approved-comments',
+  //   paths: null,
+  //   submission_count: 17,
+  //   fields: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
+  //   created_at: '2018-03-21T19:52:52.959Z',
+  //   last_submission_at: '2018-03-28T16:07:19.426Z' },
+  // { id: '5ab2b70b8c8f3308508c6b48',
+  //   site_id: '9859aca9-0a82-49d4-9ae9-eefcbb4c4129',
+  //   name: 'approved-blog-comments',
+  //   paths: null,
+  //   submission_count: 0,
+  //   fields: [ [Object], [Object], [Object], [Object], [Object] ],
+  //   created_at: '2018-03-21T19:48:27.612Z',
+  //   last_submission_at: null },
+  // { id: '5ab279a756f7ce6ce7ffcccb',
+  //   site_id: '9859aca9-0a82-49d4-9ae9-eefcbb4c4129',
+  //   name: 'comments-queue',
+  //   paths: null,
+  //   submission_count: 3,
+  //   fields: [ [Object], [Object], [Object], [Object], [Object] ],
+  //   created_at: '2018-03-21T15:26:31.632Z',
+  //   last_submission_at: '2018-03-28T19:36:26.218Z' } ];
+
   // Automatically detect and set the comments queue form environment variable.
   var siteDomain = process.env.URL.split("://")[1];
   var url = `https://api.netlify.com/api/v1/sites/${siteDomain}/forms/?access_token=${process.env.API_AUTH}`;
