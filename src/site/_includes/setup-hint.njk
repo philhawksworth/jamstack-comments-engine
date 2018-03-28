@@ -4,10 +4,10 @@
 
 It looks like you are just setting this up in a new site on Netlify. Woohoo!
 
-You'll just need to add a couple of environment variables your site before everything will work.
+You'll just need to add a few environment variables your site before everything will work.
 
-- `AUTH_ID` - to [grant permission](https://www.netlify.com/docs) to read and wrote to the API
-- `APPROVED_COMMENTS_FORM_ID` - to identify where to find the queued comment data in the [submissions API](https://www.netlify.com/docs).
+- `AUTH_ID` - to grant permission to read and write to the API. Get this by [creating new Personal Access Token](https://app.netlify.com/account/applications)
+- `APPROVED_COMMENTS_FORM_ID` - to identify where to find the approved comment data in the [submissions API](https://www.netlify.com/docs). We detected that for you automatically: `{{ init.approved_form_ids }}`
 - `SLACK_WEBHOOK_URL` - In order to have the notifications appear in Slack, you'll need to create a Slack app with a webhook URL. [Here's how](https://www.netlify.com/docs).
 
 </div>

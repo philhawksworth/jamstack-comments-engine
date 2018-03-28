@@ -68,59 +68,34 @@ gulp.task("js", function () {
 */
 gulp.task('check-init', function () {
 
-
-  // var formsData = [ { id: '5ab2b81488490b0f6c50f8fd',
-  //   site_id: '9859aca9-0a82-49d4-9ae9-eefcbb4c4129',
-  //   name: 'approved-comments',
-  //   paths: null,
-  //   submission_count: 17,
-  //   fields: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
-  //   created_at: '2018-03-21T19:52:52.959Z',
-  //   last_submission_at: '2018-03-28T16:07:19.426Z' },
-  // { id: '5ab2b70b8c8f3308508c6b48',
-  //   site_id: '9859aca9-0a82-49d4-9ae9-eefcbb4c4129',
-  //   name: 'approved-blog-comments',
-  //   paths: null,
-  //   submission_count: 0,
-  //   fields: [ [Object], [Object], [Object], [Object], [Object] ],
-  //   created_at: '2018-03-21T19:48:27.612Z',
-  //   last_submission_at: null },
-  // { id: '5ab279a756f7ce6ce7ffcccb',
-  //   site_id: '9859aca9-0a82-49d4-9ae9-eefcbb4c4129',
-  //   name: 'comments-queue',
-  //   paths: null,
-  //   submission_count: 3,
-  //   fields: [ [Object], [Object], [Object], [Object], [Object] ],
-  //   created_at: '2018-03-21T15:26:31.632Z',
-  //   last_submission_at: '2018-03-28T19:36:26.218Z' } ];
-
-  // Automatically detect and set the comments queue form environment variable.
-  var siteDomain = process.env.URL.split("://")[1];
-  var url = `https://api.netlify.com/api/v1/sites/${siteDomain}/forms/?access_token=${process.env.API_AUTH}`;
-  console.log("LOOKING FOR FORMS FROM: ", url);
-
-  // Go and get the data from Netlify's submissions API
-  request(url, function(err, response, body){
-    if(!err && response.statusCode === 200){
-      var body = JSON.parse(body);
-      console.log("FORMS: ", body);
-    } else {
-      console.log("Couldn't get comments from Netlify");
-    }
-  });
-
-
   // Look for the environment variables
-  if(process.env.QUEUED_COMMENTS_FORM_ID && process.env.API_AUTH && process.env.SLACK_WEBHOOK_URL ) {
+  if(process.env.APPROVED_COMMENTS_FORM_ID && process.env.API_AUTH && process.env.SLACK_WEBHOOK_URL ) {
     console.log("Required ENV VARS found.");
     var initStatus = {"environment" : true};
   } else {
     console.log("Required ENV VARS missing.");
     var initStatus = {"environment" : false};
+
+    // Automatically detect and set the comments queue form environment variable.
+    var siteDomain = process.env.URL.split("://")[1];
+    var url = `https://api.netlify.com/api/v1/sites/${siteDomain}/forms/?access_token=${process.env.API_AUTH}`;
+    request(url, function(err, response, body){
+      if(!err && response.statusCode === 200){
+        var body = JSON.parse(body);
+        var approvedForm = body.filter(function(f){
+          return f.name == 'approved-comments';
+        });
+        // add the form id to our init data stash
+        initStatus['approved_form_id'] = approvedForm[0].id;
+      } else {
+        console.log("Couldn't detect a APPROVED_FORM from the API");
+      }
+    });
   }
 
-  // add the root URL being used in this enviromment
+  // add the root URL being used in this environment
   initStatus['rootURL'] = process.env.URL;
+
 
   // save the status of our environment somewhere that our SSG can access it
   fs.writeFile(buildSrc + "/site/_data/init.json", JSON.stringify(initStatus), function(err) {
@@ -147,7 +122,7 @@ gulp.task('generate', shell.task('eleventy --config=eleventy.js'));
 gulp.task("get:comments", function () {
 
   // set up our request with appropriate auth token and Form ID
-  var url = `https://api.netlify.com/api/v1/forms/${process.env.QUEUED_COMMENTS_FORM_ID}/submissions/?access_token=${process.env.API_AUTH}`;
+  var url = `https://api.netlify.com/api/v1/forms/${process.env.APPROVED_COMMENTS_FORM_ID}/submissions/?access_token=${process.env.API_AUTH}`;
 
   // Go and get the data from Netlify's submissions API
   request(url, function(err, response, body){

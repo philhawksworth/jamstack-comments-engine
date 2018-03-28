@@ -11,7 +11,7 @@
     "build:local": "gulp build:local && yarn run build:functions",
     "build:functions": "netlify-lambda build src/lambda",
     "watch": "gulp watch & gulp serve",
-    "js": "gulp js"
+    "check": "gulp check-init"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.3.0ya",
