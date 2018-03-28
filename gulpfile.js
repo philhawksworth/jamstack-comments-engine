@@ -68,6 +68,19 @@ gulp.task("js", function () {
 */
 gulp.task('check-init', function () {
 
+  var url = `https://api.netlify.com/api/v1/sites/${process.env.URL}/forms/?access_token=${process.env.API_AUTH}`;
+
+  // Go and get the data from Netlify's submissions API
+  request(url, function(err, response, body){
+    if(!err && response.statusCode === 200){
+      var body = JSON.parse(body);
+      console.log("FORMS: ", body);
+    } else {
+      console.log("Couldn't get comments from Netlify");
+    }
+  });
+
+
   // Look for the environment variables
   if(process.env.QUEUED_COMMENTS_FORM_ID && process.env.API_AUTH && process.env.SLACK_WEBHOOK_URL ) {
     console.log("Required ENV VARS found.");
