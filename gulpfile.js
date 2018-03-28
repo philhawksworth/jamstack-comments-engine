@@ -76,22 +76,23 @@ gulp.task('check-init', function () {
     console.log("Required ENV VARS missing.");
     var initStatus = {"environment" : false};
 
-    // Automatically detect and set the comments queue form environment variable.
-    var siteDomain = process.env.URL.split("://")[1];
-    var url = `https://api.netlify.com/api/v1/sites/${siteDomain}/forms/?access_token=${process.env.API_AUTH}`;
-    request(url, function(err, response, body){
-      if(!err && response.statusCode === 200){
-        var body = JSON.parse(body);
-        var approvedForm = body.filter(function(f){
-          return f.name == 'approved-comments';
-        });
-        // add the form id to our init data stash
-        initStatus['approved_form_id'] = approvedForm[0].id;
-      } else {
-        console.log("Couldn't detect a APPROVED_FORM from the API");
-      }
-    });
   }
+
+  // Automatically detect and set the comments queue form environment variable.
+  var siteDomain = process.env.URL.split("://")[1];
+  var url = `https://api.netlify.com/api/v1/sites/${siteDomain}/forms/?access_token=${process.env.API_AUTH}`;
+  request(url, function(err, response, body){
+    if(!err && response.statusCode === 200){
+      var body = JSON.parse(body);
+      var approvedForm = body.filter(function(f){
+        return f.name == 'approved-comments';
+      });
+      // add the form id to our init data stash
+      initStatus['approved_form_id'] = approvedForm[0].id;
+    } else {
+      console.log("Couldn't detect a APPROVED_FORM from the API");
+    }
+  });
 
   // add the root URL being used in this environment
   initStatus['rootURL'] = process.env.URL;
