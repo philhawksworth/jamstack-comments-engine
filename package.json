@@ -7,9 +7,11 @@
   "scripts": {
     "start": "yarn run build:local && yarn run watch",
     "build": "gulp build && yarn run build:functions",
+    "gen": "gulp generate",
     "build:local": "gulp build:local && yarn run build:functions",
     "build:functions": "netlify-lambda build src/lambda",
-    "watch": "gulp watch & gulp serve"
+    "watch": "gulp watch & gulp serve",
+    "js": "gulp js"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.3.0ya",
@@ -17,6 +19,7 @@
     "gravatar": "^1.6.0",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
     "gulp-sass": "^3.1.0",
     "gulp-serve": "^1.4.0",
     "gulp-shell": "^0.6.5",

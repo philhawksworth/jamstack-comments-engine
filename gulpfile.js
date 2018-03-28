@@ -7,6 +7,7 @@ var runSequence = require('run-sequence');
 var gravatar    = require('gravatar');
 var request     = require("request");
 var fs          = require('fs');
+var concat      = require('gulp-concat');
 var config      = require('dotenv').config()
 
 
@@ -42,11 +43,22 @@ gulp.task('serve', serve({
   Compile SCSS files to CSS
 */
 gulp.task("scss", function () {
-  gulp.src(buildSrc + "/scss/main.scss")
+  return gulp.src(buildSrc + "/scss/main.scss")
     .pipe(sass({
       outputStyle: "compressed"
     }).on('error', sass.logError))
     .pipe(gulp.dest(buildDest + "/css"))
+});
+
+
+
+/*
+  simplest possible noddy js management
+*/
+gulp.task("js", function () {
+  return gulp.src(buildSrc + "/js/**/*.js")
+    .pipe(concat('jamstack-comments.js'))
+    .pipe(gulp.dest(buildDest + '/js'))
 });
 
 
@@ -165,7 +177,8 @@ gulp.task('build', function(callback) {
 gulp.task('build:local', function(callback) {
   runSequence(
     ['clean-build'],
-    ['generate', 'scss'],
+    ['generate'],
+    ['scss', 'js'],
     callback
   );
 });
