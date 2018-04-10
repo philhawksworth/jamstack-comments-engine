@@ -7,7 +7,7 @@ layout: layouts/base.njk
 
 This example site demonstrates a comments system build by combining form handling, serverless functions, and build triggers on Netlify. Try it out by exploring one of the pages listed below, and then perhaps [learn more or get a version of your own](/about) to experiment with.
 
-{% if init.environment == false %}
+{% if init.environment !== true %}
   {% include "setup-hint.njk" -%}
 {% endif %}
 

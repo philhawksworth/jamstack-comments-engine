@@ -42,9 +42,9 @@ body {
   width: 90%;
   text-align: left;
 
-  // @include bp(mid) {
-  //   width: 70%;
-  // }
+  @include bp(mid) {
+    width: 70%;
+  }
   @include bp(wide) {
     width: 700px;
   }
@@ -211,6 +211,18 @@ a:focus {
 
 }
 
+.comment-text {
+  h1 { font-size: 2em; }
+  h2 { font-size: 1.6em; }
+  h3 { font-size: 1.4em; }
+  h4 { font-size: 1.2em; }
+  p {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+  }
+}
+
+
 form {
   margin-top: 1em;
   margin-bottom: 2em;
@@ -245,7 +257,6 @@ form {
    textarea {
      height:8em;
    }
-
 
    .needs-content {
      border-bottom: dashed 4px $accent-color;

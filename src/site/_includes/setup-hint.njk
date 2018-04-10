@@ -4,7 +4,14 @@
 
 It looks like you are just setting this up in a new site on Netlify. Woohoo!
 
-You'll just need to [add a few environment variables](https://app.netlify.com/sites/{{init.siteName}}/settings/deploys#build-environment-variables) your site before everything will work.
+{% if init.siteName %}
+  {% set envHelpLink = "https://app.netlify.com/sites/" + init.siteName + "/settings/deploys#build-environment-variables" %}
+{% else %}
+  {% set envHelpLink = "https://www.netlify.com/docs/continuous-deployment/#build-environment-variables" %}
+{% endif %}
+
+You'll just need to [add a few environment variables]({{envHelpLink}}) your site before everything will work.
+
 
 👉 `AUTH_ID`
 
@@ -14,7 +21,7 @@ Grants permission to use the Forms API. Get this by [creating new Personal Acces
 
 👉 `APPROVED_COMMENTS_FORM_ID`
 
-Identify where to find the approved comment data in the submissions API. We detected that for you automatically: `{{ init.approved_form_id }}`
+Identify where to find the approved comment data in the submissions API. After the first build of this project on Netlify, the form API will have been created and can [discover it automatically](/.netlify/functions/get-form-id)
 
 
 
