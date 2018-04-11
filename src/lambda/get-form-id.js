@@ -18,7 +18,7 @@ export function handler(event, context, callback) {
       });
       callback(null, {
         statusCode: 200,
-        body: `approved_form_id ${approvedForm[0].id}`
+        body: `<html><head><title>Approved Form ID</title></head><body>The approved_form_id is: ${approvedForm[0].id}<body></html>`
       })
     } else {
       callback(null, {
