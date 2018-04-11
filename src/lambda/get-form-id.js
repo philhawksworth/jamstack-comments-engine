@@ -3,6 +3,7 @@ var request = require("request");
 
 /*
   Once a build has happened, Netlify will have created a Form for us. We want its ID for some setup.
+  This function is a little helper to discover that ID so that we can more easily add it as an env variable.
 */
 export function handler(event, context, callback) {
 
