@@ -24,6 +24,13 @@ The flow goes like this:
 5. The site build pulls all the approved comments from the Netlify submissions API, and then generates all of the pages (complete with their comments) with a static site generator (the simple and elegant [11ty](https://www.11ty.io/))
 
 
+## See the moderation in action
+
+<div class="video-responsive">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/-5z74ORssHE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+
 ## Want one of your own?
 
 You can get your own instance of this example site up and running on Netlify very quickly by clicking the button below.
