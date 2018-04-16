@@ -1,18 +1,6 @@
 {
   "/posts/no-performance-bottlenecks/": [
     {
-      "name": "Jared White",
-      "avatar": "https://s.gravatar.com/avatar/a5c250d002fefef2418f9eae5a9a418c?s=100&r=x&d=retro",
-      "comment": "\nThis sounds like a really cool idea! Totally going to look into it. All my Jekyll sites are hosted on Netlify.",
-      "date": "2018-04-08T05:16:28.878Z"
-    },
-    {
-      "name": "Phil",
-      "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
-      "comment": "\nOoooooh! Cool.",
-      "date": "2018-03-29T02:51:12.881Z"
-    },
-    {
       "name": "Phil Hawksworth",
       "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
       "comment": "\nWhere does the content come from? Well, at build time, it is pulled from Netlify's [form submissions API](https://www.netlify.com/docs/api/)",
@@ -26,36 +14,6 @@
     }
   ],
   "/posts/comments-on-your-content-in-your-content/": [
-    {
-      "name": "Jawohlish",
-      "avatar": "https://s.gravatar.com/avatar/89def0dcf23b71ad34f3baa715792467?s=100&r=x&d=retro",
-      "comment": "\nCommentitis is a useful approach.",
-      "date": "2018-04-07T20:08:31.943Z"
-    },
-    {
-      "name": "Bdougie",
-      "avatar": "https://s.gravatar.com/avatar/163f9149876e67d7be70ddea280a88d4?s=100&r=x&d=retro",
-      "comment": "\nHola",
-      "date": "2018-04-07T13:55:42.002Z"
-    },
-    {
-      "name": "Phil Hawksworth",
-      "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
-      "comment": "\nThanks Tony!\r\n\r\nNow it looks like I might need to finesse the styling of the markup within comments a little. Supporting markup is nice, but I predict lots of *massive* H1s in comments.  \r\n\r\n:)",
-      "date": "2018-03-28T20:47:09.772Z"
-    },
-    {
-      "name": "Tony Alves",
-      "avatar": "https://s.gravatar.com/avatar/82652c5666d2ad5b7cf64c550084d6c3?s=100&r=x&d=retro",
-      "comment": "\n# Fantastic\r\n\r\n- Great idea\r\n- Superbly executed\r\n- Did I say this was a Great idea?\r\n\r\nPhil, this is pretty impressive. This is thinking outside the box for sure. Now I have to see if I can bring it up a level. 😁",
-      "date": "2018-03-28T20:15:17.867Z"
-    },
-    {
-      "name": "Gerald Onyango",
-      "avatar": "https://s.gravatar.com/avatar/3e925cd2ded9e3bffd446155c615b843?s=100&r=x&d=retro",
-      "comment": "\n## Hi!\r\nThis site is awesome!",
-      "date": "2018-03-28T16:07:19.407Z"
-    },
     {
       "name": "Phil Hawksworth",
       "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
@@ -93,58 +51,6 @@
       "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
       "comment": "\nComments are wonderful! I'll never get tired of all of the things people will want to post here for discussion.",
       "date": "2018-03-26T22:43:55.969Z"
-    }
-  ],
-  "/posts/a-post-which-you-might-comment-on/": [
-    {
-      "name": "Phil",
-      "avatar": "https://s.gravatar.com/avatar/55502f40dc8b7c769880b10874abc9d0?s=100&r=x&d=retro",
-      "comment": "\nWe should really have notifications to slack when the build completes so we can see when it is worth taking a look at the comment on the site.\r\n\r\nOh.... that's done. Yay!",
-      "date": "2018-03-25T19:28:49.546Z"
-    },
-    {
-      "name": "Phil",
-      "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
-      "comment": "\nTesting this again, but I *really* should add proper blog posts next.",
-      "date": "2018-03-25T18:28:39.559Z"
-    },
-    {
-      "name": "Somebody anonymous",
-      "avatar": "https://s.gravatar.com/avatar/3150fd42a3442786a74afdae5c6a93d9?s=100&r=x&d=retro",
-      "comment": "\nThe gravatar support will return a generated avatar I'd a real avatar is not set for this email.",
-      "date": "2018-03-24T11:16:44.353Z"
-    },
-    {
-      "name": "Phil",
-      "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
-      "comment": "\nThis page deserves some comments too!",
-      "date": "2018-03-24T11:14:34.646Z"
-    }
-  ],
-  "/posts/another-post-perhaps-more-comments/": [
-    {
-      "name": "Matt",
-      "avatar": "https://s.gravatar.com/avatar/912f6347aa7220d1ab083dd271ec111a?s=100&r=x&d=retro",
-      "comment": "\nVery cool!",
-      "date": "2018-03-25T19:13:40.420Z"
-    },
-    {
-      "name": "Phil",
-      "avatar": "https://s.gravatar.com/avatar/465724d73fe3a92c0879fdfb43a3a6f3?s=100&r=x&d=retro",
-      "comment": "\nLet's fix the order of comments so that the newest is at the bottom and so you ready the tjread from top to bottom, like a normal person.\r\n\r\n\r\nAlso, is the markdown for bold actually **2 asterisks**, not 1?",
-      "date": "2018-03-22T18:27:07.053Z"
-    },
-    {
-      "name": "Phil",
-      "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
-      "comment": "\nI should also make sure that the *Markdown* support looks ok. I'd hate for that to be broken as it's nice to be able to include some sort of formatting in comments.\r\n\r\nIt is also good to have a way to simply [post links](https://www.hawksworx.com).",
-      "date": "2018-03-22T18:24:13.837Z"
-    },
-    {
-      "name": "Phil",
-      "avatar": "https://s.gravatar.com/avatar/10ca8fcb1f434f8929dca2a8867fb71d?s=100&r=x&d=retro",
-      "comment": "\nThis is just a test comment. Ideally the comments would mean something to for this example. But it is probably worth waiting until I have posted some posts which are also descriptive and meaningful with URLs which make sense.\r\n\r\nThat will come _soon_",
-      "date": "2018-03-22T18:21:22.717Z"
     }
   ]
 }
