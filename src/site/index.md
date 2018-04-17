@@ -3,7 +3,7 @@ title: JAMstack Comments Engine
 layout: layouts/base.njk
 ---
 
-# Jamstack Comments Engine
+# Smashing Comments Engine
 
 This example site demonstrates a comments system build by combining form handling, serverless functions, and build triggers on Netlify. Try it out by exploring one of the pages listed below, and then perhaps [learn more or get a version of your own](/about) to experiment with.
 
