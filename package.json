@@ -8,6 +8,7 @@
     "start": "yarn run build:local && yarn run watch",
     "build": "gulp build && yarn run build:functions",
     "gen": "gulp generate",
+    "gather": "gulp get:comments",
     "build:local": "gulp build:local && yarn run build:functions",
     "build:functions": "netlify-lambda build src/lambda",
     "watch": "gulp watch & gulp serve",
