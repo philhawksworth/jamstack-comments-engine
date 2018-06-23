@@ -18,13 +18,12 @@
     "@11ty/eleventy": "^0.3.0ya",
     "dotenv": "^5.0.1",
     "gravatar": "^1.6.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^3.1.0",
     "gulp-serve": "^1.4.0",
     "gulp-shell": "^0.6.5",
-    "netlify-lambda": "^0.2.0",
-    "run-sequence": "^2.2.1"
+    "netlify-lambda": "^0.2.0"
   }
 }

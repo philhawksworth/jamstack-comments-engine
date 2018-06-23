@@ -3,7 +3,6 @@ var sass        = require("gulp-sass");
 var serve       = require('gulp-serve');
 var shell       = require('gulp-shell');
 var clean       = require('gulp-clean');
-var runSequence = require('run-sequence');
 var gravatar    = require('gravatar');
 var request     = require("request");
 var fs          = require('fs');
@@ -66,7 +65,7 @@ gulp.task("js", function () {
 /*
   Check if we need to help the developer setup the Netlify environment variables
 */
-gulp.task('check-init', function () {
+gulp.task('check-init', function (done) {
 
   // Look for the environment variables
   if(process.env.APPROVED_COMMENTS_FORM_ID && process.env.API_AUTH && process.env.SLACK_WEBHOOK_URL && process.env.URL ) {
@@ -89,14 +88,18 @@ gulp.task('check-init', function () {
           'siteName' : siteDomain.replace('.netlify.com', '')
         };
         saveInitStatus(initStatus);
+        done();
       } else {
         console.log("Couldn't detect a APPROVED_FORM from the API");
+        done();
       }
     });
   } else {
     var initStatus = {"environment" : false};
     saveInitStatus(initStatus);
+    done();
   }
+
 
 });
 
@@ -126,12 +129,10 @@ gulp.task('generate', shell.task('eleventy --config=eleventy.js'));
 /*
   Collect and stash comments for the build
 */
-gulp.task("get:comments", function () {
+gulp.task("get:comments", function (done) {
 
   // set up our request with appropriate auth token and Form ID
   var url = `https://api.netlify.com/api/v1/forms/${process.env.APPROVED_COMMENTS_FORM_ID}/submissions/?access_token=${process.env.API_AUTH}`;
-
-  console.log('url :', url);
 
   // Go and get the data from Netlify's submissions API
   request(url, function(err, response, body){
@@ -159,14 +160,13 @@ gulp.task("get:comments", function () {
         }
       }
 
-            console.log('Comments: :', comments);
-
       // write our data to a file where our site generator can get it.
       fs.writeFile(buildSrc + "/site/_data/comments.json", JSON.stringify(comments, null, 2), function(err) {
         if(err) {
           console.log(err);
         } else {
           console.log("Comments data saved.");
+          done();
         }
       });
 
@@ -175,7 +175,6 @@ gulp.task("get:comments", function () {
     }
   });
 });
-
 
 
 /*
@@ -190,25 +189,11 @@ gulp.task("watch", function () {
 /*
   Let's build this sucker for production
 */
-gulp.task('build', function(callback) {
-  runSequence(
-    ['clean-build','check-init', 'get:comments'],
-    ['generate'],
-    ['scss', 'js'],
-    callback
-  );
-});
 
+gulp.task('build', gulp.series('get:comments', 'generate', 'scss', 'js'))
 
 
 /*
   Let's build this for local development
 */
-gulp.task('build:local', function(callback) {
-  runSequence(
-    ['clean-build'],
-    ['generate'],
-    ['scss', 'js'],
-    callback
-  );
-});
+gulp.task('build:local', gulp.series('generate', 'scss', 'js'))
