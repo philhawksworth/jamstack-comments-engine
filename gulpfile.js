@@ -190,7 +190,7 @@ gulp.task("watch", function () {
   Let's build this sucker for production
 */
 
-gulp.task('build', gulp.series('get:comments', 'generate', 'scss', 'js'))
+gulp.task('build', gulp.series('get:comments', 'check-init', 'generate', 'scss', 'js'))
 
 
 /*
