@@ -131,6 +131,8 @@ gulp.task("get:comments", function () {
   // set up our request with appropriate auth token and Form ID
   var url = `https://api.netlify.com/api/v1/forms/${process.env.APPROVED_COMMENTS_FORM_ID}/submissions/?access_token=${process.env.API_AUTH}`;
 
+  console.log('url :', url);
+
   // Go and get the data from Netlify's submissions API
   request(url, function(err, response, body){
     if(!err && response.statusCode === 200){
@@ -156,6 +158,8 @@ gulp.task("get:comments", function () {
           comments[data.path] = [comment];
         }
       }
+
+            console.log('Comments: :', comments);
 
       // write our data to a file where our site generator can get it.
       fs.writeFile(buildSrc + "/site/_data/comments.json", JSON.stringify(comments, null, 2), function(err) {
