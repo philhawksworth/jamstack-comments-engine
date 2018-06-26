@@ -164,6 +164,7 @@ gulp.task("get:comments", function (done) {
       fs.writeFile(buildSrc + "/site/_data/comments.json", JSON.stringify(comments, null, 2), function(err) {
         if(err) {
           console.log(err);
+          done();
         } else {
           console.log("Comments data saved.");
           done();
@@ -172,6 +173,7 @@ gulp.task("get:comments", function (done) {
 
     } else {
       console.log("Couldn't get comments from Netlify");
+      done();
     }
   });
 });
@@ -181,7 +183,7 @@ gulp.task("get:comments", function (done) {
   Watch src folder for changes
 */
 gulp.task("watch", function () {
-  gulp.watch(buildSrc + "/**/*", ["build:local"])
+  gulp.watch(buildSrc + "/**/*", gulp.parallel('build:local'))
 });
 
 
