@@ -8,6 +8,8 @@ Comments for your site. With no server to maintain and no Javascript dependency.
 
 Built on Netlify
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9859aca9-0a82-49d4-9ae9-eefcbb4c4129/deploy-status)](https://app.netlify.com/sites/jamstack-comments/deploys)
+
 ## Setting up
 
 1. Clone the repo and deploy it as a netlify (with one click via this DTN button)
