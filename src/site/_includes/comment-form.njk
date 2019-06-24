@@ -9,7 +9,7 @@
 
 <form name="comments-queue" netlify-honeypot="full-name" action="/thanks" netlify>
   <p class="honey">
-    <input name="path" value="{{ page.url }}">
+    <input name="path" type="hidden" value="{{ page.url }}">
     <label>Your full name: <input name="full-name"></label>
   </p>
   <p>
