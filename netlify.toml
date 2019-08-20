@@ -2,4 +2,4 @@
   Functions = "functions"
   command = "yarn run build"
   publish = "dist"
-  NODE_ENV = "8.9.0"
+  NODE_ENV = "10.15.3"

@@ -15,15 +15,15 @@
     "check": "gulp check-init"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.3.0ya",
-    "dotenv": "^5.0.1",
-    "gravatar": "^1.6.0",
-    "gulp": "^4.0.0",
+    "@11ty/eleventy": "^0.8.3",
+    "dotenv": "^8.1.0",
+    "gravatar": "^1.8.0",
+    "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
     "gulp-concat": "^2.6.1",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^4.0.2",
     "gulp-serve": "^1.4.0",
-    "gulp-shell": "^0.6.5",
-    "netlify-lambda": "^0.2.0"
+    "gulp-shell": "^0.7.1",
+    "netlify-lambda": "^1.6.2"
   }
 }
