@@ -16,10 +16,6 @@ templateEngineOverride: njk, md
     </p>
   </div>
 </main>
-<div class="comments">
-{# Add the any comments we have stashed for this page #}
-{% include "comments.njk" -%}
-
 {# Unless we have disabled comments for this page, add a comments form #}
 {% if commentsClosed != true %}
 {% include "comment-form.njk" -%}
@@ -30,4 +26,8 @@ templateEngineOverride: njk, md
     </p>
   </div>
 {% endif %}
+
+<div class="comments">
+{# Add the any comments we have stashed for this page #}
+{% include "comments.njk" -%}
 </div>

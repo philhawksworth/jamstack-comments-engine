@@ -1,4 +1,4 @@
-![JAMstack Comments Engine screengrab](screenshot.jpg)
+![Jamstack Comments Engine screengrab](screenshot.jpg)
 
 
 # Comments engine example.

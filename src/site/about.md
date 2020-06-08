@@ -1,11 +1,11 @@
 ---
-title: JAMstack Comments Engine - about
+title: Jamstack Comments Engine - about
 layout: layouts/base.njk
 ---
 
 # What is this anyway?
 
-This site is an example of how a [JAMstack](https://www.jamstack.org) site can implement comments.
+This site is an example of how a [Jamstack](https://www.jamstack.org) site can implement comments.
 
 All comments are posted with a form and once approved, rendered directly onto the site via a build. No JavaScript is required to pull them into your browser for rendering.
 
