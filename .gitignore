@@ -3,7 +3,6 @@ dist
 src/site/_inludes/css/*
 .env
 src/site/_data/init.json
-src/site/_data/comments.json
 src/site/_data/approved-comments_submissions.json
 
 # Local Netlify folder
