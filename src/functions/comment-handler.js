@@ -16,6 +16,8 @@ export function handler(event, context, callback) {
   // get the arguments from the notification
   var body = JSON.parse(event.body);
 
+  console.log('event.body :>> ', event.body);
+
   // prepare call to the Slack API
   var slackPayload = {
     "text": "New comment on " + URL,
