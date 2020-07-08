@@ -4,10 +4,15 @@ module.exports = function(config) {
   config.addFilter("dateDisplay", require("./filters/dates.js") );
 
   // More useful markdown inclusions
-  // config.addPlugin(markdownShortcode, {
-  //   html: true,
-  //   linkify: true,
-  // });
+
+  const markdownIt = require("markdown-it");
+  const md = new markdownIt({
+    html: true
+  });
+  config.addFilter("markdown", (content) => {
+    return md.render(content);
+  });
+
 
 
   const Terser = require("terser");

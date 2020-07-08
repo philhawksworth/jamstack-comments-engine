@@ -6,12 +6,7 @@
       <img class="avatar" src="{{ comment.avatar }}">
       <h3>{{ comment.name }}</h3>
       <div class="date">  made the following comment, <time>{{ comment.date | dateDisplay }}</time></div>
-      <div class="comment-text">
-
-        {{ comment.comment | safe }}
-        {# {% markdown comment.comment %} #}
-
-      </div>
+      <div class="comment-text">{{ comment.comment | markdown | safe}}</div>
     </li>
   {%- endfor -%}
   </ul>
