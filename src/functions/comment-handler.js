@@ -55,10 +55,10 @@ export function handler(event, context, callback) {
     let msg;
     axios.post(SLACK_WEBHOOK_URL, slackPayload)
     .then(function(response){
-      msg = 'Post to Slack successful!  Server responded with:' + body;
+      msg = 'Post to Slack successful!  Server responded with:' + response;
     })
     .catch(function(error){
-      msg = 'Post to Slack failed:' + err;
+      msg = 'Post to Slack failed:' + error;
     })
     .finally(function(){
       console.log(msg);
