@@ -5,3 +5,6 @@ src/site/_inludes/css/*
 .env
 src/site/_data/init.json
 src/site/_data/comments.json
+
+# Local Netlify folder
+.netlify

@@ -1,16 +1,18 @@
-'use strict';
-
 var request = require("request");
 
 // populate environment variables locally.
 require('dotenv').config()
+const {
+  NETLIFY_AUTH_TOKEN,
+  URL
+} = process.env;
 
 
 /*
   delete this submission via the api
 */
 function purgeComment(id) {
-  var url = `https://api.netlify.com/api/v1/submissions/${id}?access_token=${process.env.API_AUTH}`;
+  var url = `https://api.netlify.com/api/v1/submissions/${id}?access_token=${NETLIFY_AUTH_TOKEN}`;
   request.delete(url, function(err, response, body){
     if(err){
       return console.log(err);
@@ -41,7 +43,7 @@ export function handler(event, context, callback) {
   } else if (method == "approve"){
 
     // get the comment data from the queue
-    var url = `https://api.netlify.com/api/v1/submissions/${id}?access_token=${process.env.API_AUTH}`;
+    var url = `https://api.netlify.com/api/v1/submissions/${id}?access_token=${NETLIFY_AUTH_TOKEN}`;
 
     request(url, function(err, response, body){
       if(!err && response.statusCode === 200){
@@ -56,13 +58,12 @@ export function handler(event, context, callback) {
           'name': data.name,
           'comment': data.comment
         };
-        var approvedURL = process.env.URL;
 
-        console.log("Posting to", approvedURL);
+        console.log("Posting to", URL);
         console.log(payload);
 
         // post the comment to the approved lost
-        request.post({'url':approvedURL, 'formData': payload }, function(err, httpResponse, body) {
+        request.post({'url':URL, 'formData': payload }, function(err, httpResponse, body) {
           var msg;
           if (err) {
             msg = 'Post to approved comments failed:' + err;

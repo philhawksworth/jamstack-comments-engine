@@ -1,0 +1,21 @@
+{
+  "name": "netlify-plugin-form-submissions",
+  "version": "0.1.0",
+  "description": "A Netlify plugin to... ",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/philhawksworth/netlify-plugin-form-submissions"
+  },
+  "keywords": [
+    "netlify",
+    "plugin",
+    "jamstack"
+  ],
+  "author": "Phil Hawksworth",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "node-fetch": "^2.6.0"
+  }
+}
