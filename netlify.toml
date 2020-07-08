@@ -1,5 +1,5 @@
 [build]
-  Functions = "functions"
+  Functions = "src/functions"
   command = "npm run build"
   publish = "dist"
   environment = { NODE_VERSION = "12.18.0" }
