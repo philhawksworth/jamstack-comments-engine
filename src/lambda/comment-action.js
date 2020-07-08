@@ -43,9 +43,6 @@ export function handler(event, context, callback) {
     // get the comment data from the queue
     var url = `https://api.netlify.com/api/v1/submissions/${id}?access_token=${process.env.API_AUTH}`;
 
-    console.log()
-
-
     request(url, function(err, response, body){
       if(!err && response.statusCode === 200){
         var data = JSON.parse(body).data;

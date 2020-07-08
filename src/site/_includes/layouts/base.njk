@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/main.css" />
     <title>{{ title }}</title>
-    <script src="/js/jamstack-comments.js" defer></script>
+    <style>
+      {% include "css/styles.css" ignore missing %}
+    </style>
   </head>
   <body class="{{ pageClass }}">
     <div class="container">
@@ -22,6 +23,12 @@
     {{ content | safe }}
     {% include "footer.njk" %}
     </div>
+    {% set js %}
+      {% include "js/validate.js" %}
+    {% endset %}
+    <script>
+      {{ js | jsmin | safe }}
+    </script>
   </body>
 </html>
 

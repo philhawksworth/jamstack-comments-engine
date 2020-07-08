@@ -1,7 +1,7 @@
 node_modules
 dist
 functions
+src/site/_inludes/css/*
 .env
-yarn-error.log
 src/site/_data/init.json
 src/site/_data/comments.json

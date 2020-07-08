@@ -1,5 +1,4 @@
 var gulp        = require("gulp");
-var sass        = require("gulp-sass");
 var serve       = require('gulp-serve');
 var shell       = require('gulp-shell');
 var clean       = require('gulp-clean');
@@ -10,55 +9,10 @@ var concat      = require('gulp-concat');
 var config      = require('dotenv').config()
 
 
-/*
-  what goes where?
-*/
-var buildSrc = "src";
-var buildDest = "dist";
 
 
 
-/*
-  cleanup the build output
-*/
-gulp.task('clean-build', function () {
-  return gulp.src(buildDest, {read: false})
-    .pipe(clean());
-});
 
-
-
-/*
-  local webserver for development
-*/
-gulp.task('serve', serve({
-  root: [buildDest],
-  port: 8008,
-}));
-
-
-
-/*
-  Compile SCSS files to CSS
-*/
-gulp.task("scss", function () {
-  return gulp.src(buildSrc + "/scss/main.scss")
-    .pipe(sass({
-      outputStyle: "compressed"
-    }).on('error', sass.logError))
-    .pipe(gulp.dest(buildDest + "/css"))
-});
-
-
-
-/*
-  simplest possible noddy js management
-*/
-gulp.task("js", function () {
-  return gulp.src(buildSrc + "/js/**/*.js")
-    .pipe(concat('jamstack-comments.js'))
-    .pipe(gulp.dest(buildDest + '/js'))
-});
 
 
 
@@ -119,14 +73,6 @@ function saveInitStatus(initStatus) {
 
 
 /*
- Run our static site generator to build the pages
-*/
-gulp.task('generate', shell.task('eleventy --config=eleventy.js'));
-
-
-
-
-/*
   Collect and stash comments for the build
 */
 gulp.task("get:comments", function (done) {
@@ -179,23 +125,4 @@ gulp.task("get:comments", function (done) {
 });
 
 
-/*
-  Watch src folder for changes
-*/
-gulp.task("watch", function () {
-  gulp.watch(buildSrc + "/**/*", gulp.parallel('build:local'))
-});
 
-
-
-/*
-  Let's build this sucker for production
-*/
-
-gulp.task('build', gulp.series('get:comments', 'check-init', 'generate', 'scss', 'js'))
-
-
-/*
-  Let's build this for local development
-*/
-gulp.task('build:local', gulp.series('generate', 'scss', 'js'))
