@@ -11,7 +11,7 @@ module.exports = () => {
 
   submissions.forEach(entry => {
     let comment = {
-      name: "Phil",
+      name: entry.data.name,
       avatar: gravatar.url(entry.data.email, {s: '100', r: 'x', d: 'retro'}, true),
       comment: entry.data.comment,
       date: entry.data.received
