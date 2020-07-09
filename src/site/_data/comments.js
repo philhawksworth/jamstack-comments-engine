@@ -13,7 +13,7 @@ module.exports = () => {
     let comment = {
       name: entry.data.name,
       avatar: gravatar.url(entry.data.email, {s: '100', r: 'x', d: 'retro'}, true),
-      comment: entry.data.comment,
+      comment: entry.data.comment.trim(),
       date: entry.data.received
     };
 
