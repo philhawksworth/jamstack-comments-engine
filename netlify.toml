@@ -9,9 +9,12 @@
   package = "/src/plugins/netlify-plugin-form-submissions"
 
   [plugins.inputs]
-    # Get submissions fpr specific form
-    # (Default: all forms)
+    # Get submissions for specific forms
+    # e.g. "form-name"
+    # e.g. ["form-name-1", "form-name-2"]
+    # e.g. "ALL"
+    # default: "ALL"
     formNames = "approved-comments"
 
     # the folder to recieve json files for each form
-    dataDirectory = "src/site/_data/"
+    dataDirectory = "src/site/_data"

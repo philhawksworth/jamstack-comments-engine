@@ -1,9 +1,8 @@
+.env
 node_modules
 dist
 src/site/_inludes/css/*
-.env
-src/site/_data/init.json
-src/site/_data/approved-comments_submissions.json
+src/site/_data/*.json
 
 # Local Netlify folder
 .netlify
