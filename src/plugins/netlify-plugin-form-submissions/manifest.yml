@@ -1,7 +1,0 @@
-name: netlify-plugin-form-submissions
-inputs:
-  - name: formNames
-    default: "All"
-  - name: dataDirectory
-    required: true
-
