@@ -12,16 +12,10 @@ It looks like you are just setting this up in a new site on Netlify. Woohoo!
 
 You'll just need to ensure the [required environment variables]({{envHelpLink}}) your site before everything will work.
 
-{% if not environment.API_AUTH_ready  %}
-👉 `API_AUTH`
+{% if not environment.NETLIFY_AUTH_TOKEN_ready  %}
+👉 `NETLIFY_AUTH_TOKEN`
 
 Grants permission to use the Forms API. Get this by [creating new Personal Access Token](https://app.netlify.com/account/applications)
-{% endif %}
-
-{% if not environment.APPROVED_COMMENTS_FORM_ID_ready  %}
-👉 `APPROVED_COMMENTS_FORM_ID`
-
-This Identifies where to find the approved comment data in the submissions API during your build. All of your forms are listed in the in your [Netlify Admin](https://app.netlify.com/sites/{{init.siteName}}/forms/) and can find this ID at the end of the URL for your `approved-comments` form.
 {% endif %}
 
 {% if not environment.SLACK_WEBHOOK_URL_ready  %}
