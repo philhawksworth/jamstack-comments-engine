@@ -4,13 +4,8 @@ var request = require("request");
 
 // populate environment variables locally.
 require('dotenv').config()
-const {
-  SLACK_WEBHOOK_URL
-} = process.env;
 
-// hardcoding this for a moment... TODO: replace request with somethign that follows redirects
-const URL = "https://jamstack-comments.netlify.com/"
-
+const URL = "https://jamstack-comments.netlify.com";
 
 /*
   Our serverless function handler
@@ -21,6 +16,7 @@ export function handler(event, context, callback) {
   var body = JSON.parse(event.body);
 
   // prepare call to the Slack API
+  var slackURL = process.env.SLACK_WEBHOOK_URL
   var slackPayload = {
     "text": "New comment on " + URL,
 	  "attachments": [
@@ -54,7 +50,7 @@ export function handler(event, context, callback) {
     };
 
     // post the notification to Slack
-    request.post({url:SLACK_WEBHOOK_URL, json: slackPayload}, function(err, httpResponse, body) {
+    request.post({url:slackURL, json: slackPayload}, function(err, httpResponse, body) {
       var msg;
       if (err) {
         msg = 'Post to Slack failed:' + err;
