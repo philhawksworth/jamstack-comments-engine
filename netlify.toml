@@ -6,7 +6,7 @@
 
 # Config for the Netlify Build Plugin: netlify-plugin-form-submissions
 [[plugins]]
-  package = "/src/plugins/netlify-plugin-form-submissions"
+  package = "/plugins/netlify-plugin-form-submissions"
 
   [plugins.inputs]
     # Get submissions fpr specific form
