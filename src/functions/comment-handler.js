@@ -1,11 +1,15 @@
-var axios = require("axios");
+'use strict';
+
+var request = require("request");
 
 // populate environment variables locally.
 require('dotenv').config()
 const {
-  SLACK_WEBHOOK_URL,
-  URL
+  SLACK_WEBHOOK_URL
 } = process.env;
+
+// hardcoding this for a moment... TODO: replace request with somethign that follows redirects
+const URL = "https://jamstack-comments.netlify.com/"
 
 
 /*
@@ -15,8 +19,6 @@ export function handler(event, context, callback) {
 
   // get the arguments from the notification
   var body = JSON.parse(event.body);
-
-  console.log('event.body :>> ', event.body);
 
   // prepare call to the Slack API
   var slackPayload = {
@@ -52,21 +54,18 @@ export function handler(event, context, callback) {
     };
 
     // post the notification to Slack
-    let msg;
-    axios.post(SLACK_WEBHOOK_URL, slackPayload)
-    .then(function(response){
-      msg = 'Post to Slack successful!  Server responded with:' + response;
-    })
-    .catch(function(error){
-      msg = 'Post to Slack failed:' + error;
-    })
-    .finally(function(){
-      console.log(msg);
+    request.post({url:SLACK_WEBHOOK_URL, json: slackPayload}, function(err, httpResponse, body) {
+      var msg;
+      if (err) {
+        msg = 'Post to Slack failed:' + err;
+      } else {
+        msg = 'Post to Slack successful!  Server responded with:' + body;
+      }
       callback(null, {
         statusCode: 200,
         body: msg
       })
+      return console.log(msg);
     });
-
 
 }
