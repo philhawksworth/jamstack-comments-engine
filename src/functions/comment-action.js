@@ -1,13 +1,13 @@
 var request = require("request");
 
 // populate environment variables locally.
-require('dotenv').config()
+require('dotenv').config();
 const {
   NETLIFY_AUTH_TOKEN
 } = process.env;
 
 // hardcoding this for a moment... TODO: replace request with somethign that follows redirects
-const URL = "https://jamstack-comments.netlify.com/"
+const URL = "https://jamstack-comments.netlify.com/";
 
 /*
   delete this submission via the api
@@ -32,8 +32,8 @@ export function handler(event, context, callback) {
   // parse the payload
   var body = event.body.split("payload=")[1];
   var payload = JSON.parse(unescape(body));
-  var method = payload.actions[0].name
-  var id = payload.actions[0].value
+  var method = payload.actions[0].name;
+  var id = payload.actions[0].value;
 
   if(method == "delete") {
     purgeComment(id);
