@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "dotenv": "^8.1.0",
     "eleventy-plugin-sass": "^1.0.0",
     "gravatar": "^1.8.0",
