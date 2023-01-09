@@ -11,7 +11,7 @@
     "build": "npm run sass && eleventy"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy": "^1.0.2",
     "axios": "^0.19.2",
     "dotenv": "^8.1.0",
     "eleventy-plugin-sass": "^1.0.0",
